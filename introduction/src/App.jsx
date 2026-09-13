@@ -1,20 +1,20 @@
+import Body from "./components/Body"
+import Header from "./components/Header"
 
-
-// function declaration component examle
-//function App() {
+function App() {
   
-  // return (
-  //   <>
-  //     <h1>Hello, React</h1>
-  //   </>
-    
-  // )
-  // Declaration with arrow function
-  const App = () => {
-    const element = <h1>Hello, from React</h1>
+  return (
 
-    return element
-  }
-//}
+    <>
+
+    <Header />
+
+    <Body />
+    
+    </>
+    
+  )
+  
+}
 
 export default App
