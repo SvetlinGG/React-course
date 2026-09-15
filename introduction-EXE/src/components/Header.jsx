@@ -23,4 +23,10 @@ export default function Header(){
               <li><a href="#"><i className="fab fa-google-plus"></i></a></li>
             </ul>
           </div>
-        </d
+        </div>
+      </div>
+    </div>
+  </div>
+        </>
+    )
+}
