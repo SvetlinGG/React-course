@@ -57,11 +57,4 @@ export default function Header(){
                         <span>Menu</span>
                     </a>
                     {/*<!-- ***** Menu End ***** -->*/}
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
-        </>
-    )
-}
+          
