@@ -1,0 +1,72 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+[class^="col-"] {
+  width: 100%;
+  padding: 0 15px;
+}
+
+/* Large screens (matches Bootstrap's lg breakpoint, >= 992px) */
+@media (min-width: 992px) {
+  .col-lg-4 { width: 33.3333%; }
+  .col-lg-6 { width: 50%; }
+  .col-lg-7 { width: 58.3333%; }
+  .col-lg-8 { width: 66.6667%; }
+  .col-lg-12 { width: 100%; }
+  .offset-lg-6 { margin-left: 50%; }
+}
+
+/* Small screens (matches Bootstrap's sm breakpoint, >= 576px) */
+@media (min-width: 576px) {
+  .col-sm-3 { width: 25%; }
+  .col-sm-6 { width: 50%; }
+  .col-sm-9 { width: 75%; }
+}
+
+.col-12 {
+  width: 100%;
+}
+
+/* This template uses Bootstrap's ".nav" component class (not just the grid)
+   for the horizontal, flex-based menu layout. Restoring just that piece. */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/* Projects grid — replaces the JS-driven Owl Carousel with a static,
+   responsive grid. Visual card styling (.item, .down-content) is
+   untouched and comes from templatemo-tale-seo-agency.css. */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 30px;
+}
+
+.projects-grid .item {
+  flex: 1 1 320px;
+}
