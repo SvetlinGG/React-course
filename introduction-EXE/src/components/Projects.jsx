@@ -20,7 +20,10 @@ export default function Projects(){
         <div className="col-lg-12">
           <div className="projects-grid">
 
-            <ProjectCard />
+            <ProjectCard 
+              imageUrl="/src/assets/images/projects-01.jpg"
+              title="Digital Agency HTML Templates"
+              />
             
 
             <div className="item">
