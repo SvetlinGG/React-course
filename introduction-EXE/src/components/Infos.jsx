@@ -10,7 +10,7 @@ export default function Infos(){
             <div className="row">
               <div className="col-lg-6">
                 <div className="left-image">
-                  <img src="assets/images/left-infos.jpg" alt=""/>
+                  <img src="/src/assets/images/left-infos.jpg" alt=""/>
                 </div>
               </div>
               <div className="col-lg-6">

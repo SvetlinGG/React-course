@@ -18,42 +18,42 @@ export default function Projects(){
         <div className="col-lg-12">
           <div className="projects-grid">
             <div className="item">
-              <img src="assets/images/projects-01.jpg" alt=""/>
+              <img src="/src/assets/images/projects-01.jpg" alt=""/>
               <div className="down-content">
                 <h4>Digital Agency HTML Templates</h4>
                 <a href="#"><i className="fa fa-link"></i></a>
               </div>
             </div>
             <div className="item">
-              <img src="assets/images/projects-02.jpg" alt=""/>
+              <img src="/src/assets/images/projects-02.jpg" alt=""/>
               <div className="down-content">
                 <h4>Admin Dashboard CSS Templates</h4>
                 <a href="#"><i className="fa fa-link"></i></a>
               </div>
             </div>
             <div className="item">
-              <img src="assets/images/projects-03.jpg" alt=""/>
+              <img src="/src/assets/images/projects-03.jpg" alt=""/>
               <div className="down-content">
                 <h4>Best Responsive Website Layouts</h4>
                 <a href="#"><i className="fa fa-link"></i></a>
               </div>
             </div>
             <div className="item">
-              <img src="assets/images/projects-04.jpg" alt=""/>
+              <img src="/src/assets/images/projects-04.jpg" alt=""/>
               <div className="down-content">
                 <h4>HTML CSS Layouts for your websites</h4>
                 <a href="#"><i className="fa fa-link"></i></a>
               </div>
             </div>
             <div className="item">
-              <img src="assets/images/projects-02.jpg" alt=""/>
+              <img src="/src/assets/images/projects-02.jpg" alt=""/>
               <div className="down-content">
                 <h4>Bootstrap 5 Themes for Free</h4>
                 <a href="#"><i className="fa fa-link"></i></a>
               </div>
             </div>
             <div className="item">
-              <img src="assets/images/projects-03.jpg" alt=""/>
+              <img src="/src/assets/images/projects-03.jpg" alt=""/>
               <div className="down-content">
                 <h4>Mobile Friendly Website Layouts</h4>
                 <a href="#"><i className="fa fa-link"></i></a>

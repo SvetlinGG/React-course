@@ -35,7 +35,7 @@ export default function Header(){
                 <nav className="main-nav">
                     {/*<!-- ***** Logo Start ***** -->*/}
                     <a href="index.html" className="logo">
-                        <img src="assets/images/logo.png" alt="" style="max-width: 112px;"/>
+                        <img src="assets/images/logo.png" alt="" style={{ maxWidth: 112 }}/>
                     </a>
                     {/*<!-- ***** Logo End ***** -->*/}
                     {/*<!-- ***** Menu Start ***** -->*/}

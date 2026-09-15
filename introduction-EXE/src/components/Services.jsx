@@ -17,7 +17,7 @@ export default function Services(){
             <div className="col-lg-6 col-sm-6">
               <div className="service-item">
                 <div className="icon">
-                  <img src="assets/images/services-01.jpg" alt="discover SEO" className="templatemo-feature"/>
+                  <img src="/src/assets/images/services-01.jpg" alt="discover SEO" className="templatemo-feature"/>
                 </div>
                 <h4>Discover More on Latest SEO Trends</h4>
               </div>
@@ -25,7 +25,7 @@ export default function Services(){
             <div className="col-lg-6 col-sm-6">
               <div className="service-item">
                 <div className="icon">
-                  <img src="assets/images/services-02.jpg" alt="data analysis" className="templatemo-feature"/>
+                  <img src="/src/assets/images/services-02.jpg" alt="data analysis" className="templatemo-feature"/>
                 </div>
                 <h4>Real-Time Big Data Analysis</h4>
               </div>
@@ -33,7 +33,7 @@ export default function Services(){
             <div className="col-lg-6 col-sm-6">
               <div className="service-item">
                 <div className="icon">
-                  <img src="assets/images/services-03.jpg" alt="precise data" className="templatemo-feature"/>
+                  <img src="/src/assets/images/services-03.jpg" alt="precise data" className="templatemo-feature"/>
                 </div>
                 <h4>Precise Data Analysis &amp; Prediction</h4>
               </div>
@@ -41,7 +41,7 @@ export default function Services(){
             <div className="col-lg-6 col-sm-6">
               <div className="service-item">
                 <div className="icon">
-                  <img src="assets/images/services-04.jpg" alt="SEO marketing" className="templatemo-feature"/>
+                  <img src="/src/assets/images/services-04.jpg" alt="SEO marketing" className="templatemo-feature"/>
                 </div>
                 <h4>SEO Marketing &amp; Social Media</h4>
               </div>
