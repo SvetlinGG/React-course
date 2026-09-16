@@ -1,3 +1,4 @@
+import Counter from "./components/Counter"
 import Timer from "./components/Timer"
 
 
@@ -10,6 +11,8 @@ function App() {
     <h1>React Timer</h1>
 
     <Timer />
+
+    <Counter />
 
     </>
   )
