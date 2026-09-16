@@ -7,11 +7,14 @@ export default function Counter() {
         setCount( count + 1)
     }
 
+    const decrementClickHandler = () => setCount( count - 1 )
+
 
     return (
         <section>
             <h3>Counter: {count}</h3>
             <button onClick={incrementClickHandler}>+</button>
+            <button onClick={decrementClickHandler}>-</button>
         </section>
     );
 }
