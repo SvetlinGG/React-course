@@ -1,10 +1,17 @@
+import Timer from "./components/Timer"
 
 
 function App() {
   
 
   return (
-    <h1>Hello from React</h1>
+
+    <>
+    <h1>React Timer</h1>
+
+    <Timer />
+
+    </>
   )
 }
 
