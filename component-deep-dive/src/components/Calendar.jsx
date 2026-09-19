@@ -18,6 +18,10 @@ export default function Calendar() {
         setDay((prevDay) => (prevDay + 1) /*% days.length*/)
     }
 
+    const resetClickHandler = () => {
+        setDay(0)
+    }
+
     if ( day > 6){
         return (
             <section>
