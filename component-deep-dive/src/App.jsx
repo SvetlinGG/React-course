@@ -1,5 +1,6 @@
 import Calendar from "./components/Calendar"
 import Counter from "./components/Counter"
+import MovieList from "./components/MovieList"
 import Timer from "./components/Timer"
 
 
@@ -16,6 +17,8 @@ function App() {
     <Counter />
 
     <Calendar />
+
+    <MovieList />
 
     </>
   )
