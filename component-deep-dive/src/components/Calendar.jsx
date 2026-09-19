@@ -15,7 +15,7 @@ export default function Calendar() {
     const [day, setDay] = useState(0);
 
     const nextDayClickHandler = () => {
-        setDay((prevDay) => (prevDay + 1) /*% days.length*/)
+        setDay((prevDay) => (prevDay + 1) % days.length)
     }
 
     const resetClickHandler = () => {
@@ -36,6 +36,8 @@ export default function Calendar() {
     return (
         <section>
             <h2>Calendar</h2>
+
+            <h3>{day < 5 ? 'Workday' : 'Weekend'}</h3>
 
             <div>Current Day {days.at(day)}</div>
 
