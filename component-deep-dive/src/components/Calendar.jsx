@@ -31,15 +31,25 @@ export default function Calendar() {
             </section>
         )
     }
-
+    const isWorkDay = day < 5
 
     return (
         <section>
             <h2>Calendar</h2>
 
-            <h3>{day < 5 ? 'Workday' : 'Weekend'}</h3>
+            <h3>{isWorkDay ? <span>Workday</span> : <span>Weekend</span>}</h3>
 
             <div>Current Day {days.at(day)}</div>
+
+            {isWorkDay &&<div>
+                <h3>Work Schedule</h3>
+                <ul>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+                </ul>
+            </div>
+            }
 
             <button onClick={nextDayClickHandler}>Next Day</button>
         </section>
