@@ -15,13 +15,15 @@ export default function Calendar() {
     const [day, setDay] = useState(0);
 
     const nextDayClickHandler = () => {
-        setDay((prevDay) => prevDay + 1)
+        setDay((prevDay) => (prevDay + 1) /*% days.length*/)
     }
 
     if ( day > 6){
         return (
             <section>
                 <h2>Invalid day</h2>
+
+                <button onClick={resetClickHandler}>Reset Day</button>
             </section>
         )
     }
