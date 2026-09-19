@@ -1,3 +1,4 @@
+import Calendar from "./components/Calendar"
 import Counter from "./components/Counter"
 import Timer from "./components/Timer"
 
@@ -13,6 +14,8 @@ function App() {
     <Timer />
 
     <Counter />
+
+    <Calendar />
 
     </>
   )
