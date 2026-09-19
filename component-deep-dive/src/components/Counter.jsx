@@ -4,7 +4,8 @@ export default function Counter() {
     const [count, setCount] = useState(0);
 
     const incrementClickHandler = () => {
-        setCount( count + 1)
+        //setCount( count + 1)
+        setCount(prevState => prevState + 1)
     }
 
     const decrementClickHandler = () => setCount( count - 1 )
