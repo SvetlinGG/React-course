@@ -18,7 +18,7 @@ export default function TyperSection() {
                 ? <p>Typer is paused!</p>
                 : <Typer />
             }
-            <button onClick={pauseHandler}>Pause</button>
+            <button onClick={pauseHandler}>{ isPaused ? 'Typing' : 'Pause'}</button>
         </section>
     );
 }
