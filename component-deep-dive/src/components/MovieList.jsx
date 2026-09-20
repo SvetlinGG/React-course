@@ -9,9 +9,19 @@ export default function MovieList() {
         'Star Wars'
     ])
 
-    const addMovieHandler =() => {
-        setMovies(prevMovies => [...prevMovies, 'The Terminator'])
-    }
+    const addMovieHandler = () => {
+        setMovies(prevMovies => { 
+
+        const newMovie = [...prevMovies];
+
+        const removedMovie = newMovie.shift();
+
+        newMovie.push(removedMovie);
+
+        return newMovie;
+
+    });
+}
     return (
         <div>
             <h3>Movie List:</h3>
@@ -19,7 +29,7 @@ export default function MovieList() {
                 {movies.map(movie => <li key={movie}>{movie}</li>)}
             </ul>
 
-            <button onClick={addMovieHandler}>Add Movie</button>
+            <button onClick={addMovieHandler}>Update Movies</button>
         </div>
     );
 }
