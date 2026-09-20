@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import Typer from "./Typer";
 
 export default function TyperSection() {
 
-    const pauseHandler = () => {
+    const [isPaused, setIsPaused] = useState(false)
 
+    const pauseHandler = () => {
+        setIsPaused(true);
     }
 
 
@@ -11,7 +14,10 @@ export default function TyperSection() {
 
         <section>
             <h1>Typer</h1>
-            <Typer />
+            {isPaused
+                ? <p>Typer is paused!</p>
+                : <Typer />
+            }
             <button onClick={pauseHandler}>Pause</button>
         </section>
     );
