@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Typer() {
 
-    const [key, setKey] = useState('');
+    const [key, setKey] = useState('Press any key to start!');
 
     useEffect(() => {
         window.addEventListener('keypress', (event) => {
@@ -25,7 +25,7 @@ export default function Typer() {
             <h1>Typer</h1>
             <p>Pressed Key</p>
 
-            <strong>A</strong>
+            <strong>{key}</strong>
         </section>
     );
 }
