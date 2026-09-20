@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Typer() {
+
+    const [key, setKey] = useState('');
 
     useEffect(() => {
         
@@ -8,6 +10,8 @@ export default function Typer() {
     },[])
 
     const keyDownHandler = (event) => {
+
+        setKey(event.key);
         console.log(event.key);
         
     }
