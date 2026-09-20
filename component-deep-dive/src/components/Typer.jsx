@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 export default function Typer() {
 
     const [key, setKey] = useState('Press any key to start!');
@@ -19,13 +20,16 @@ export default function Typer() {
         
     // }
 
+    
+
 
     return (
-        <section>
-            <h1>Typer</h1>
+        <div>
+            
             <p>Pressed Key</p>
 
             <strong>{key}</strong>
-        </section>
+
+        </div>
     );
 }

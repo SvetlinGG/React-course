@@ -1,8 +1,8 @@
 import Calendar from "./components/Calendar"
 import Counter from "./components/Counter"
 import MovieList from "./components/MovieList"
+import TyperSection from "./components/Typer-section"
 import Timer from "./components/Timer"
-import Typer from "./components/Typer"
 
 
 function App() {
@@ -21,7 +21,8 @@ function App() {
 
     <MovieList />
 
-    <Typer />
+    <TyperSection />
+
 
     </div>
   )
