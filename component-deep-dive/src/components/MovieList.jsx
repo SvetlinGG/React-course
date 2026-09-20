@@ -8,11 +8,18 @@ export default function MovieList() {
         'Lord of the Ring',
         'Star Wars'
     ])
+
+    const addMovieHandler =() => {
+        setMovies(prevMovies => [...prevMovies, 'The Terminator'])
+    }
     return (
         <div>
+            <h3>Movie List:</h3>
             <ul>
                 {movies.map(movie => <li>{movie}</li>)}
             </ul>
+
+            <button onClick={addMovieHandler}>Add Movie</button>
         </div>
     );
 }
