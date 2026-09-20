@@ -16,7 +16,7 @@ export default function MovieList() {
         <div>
             <h3>Movie List:</h3>
             <ul>
-                {movies.map(movie => <li>{movie}</li>)}
+                {movies.map(movie => <li key={movie}>{movie}</li>)}
             </ul>
 
             <button onClick={addMovieHandler}>Add Movie</button>
