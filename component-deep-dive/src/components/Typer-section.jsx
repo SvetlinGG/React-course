@@ -6,7 +6,7 @@ export default function TyperSection() {
     const [isPaused, setIsPaused] = useState(false)
 
     const pauseHandler = () => {
-        setIsPaused(true);
+        setIsPaused(state => !state);
     }
 
 
