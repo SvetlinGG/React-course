@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+
 export default function Typer() {
+
+    useEffect(() => {
+        
+        console.log('mounted');
+    },[])
 
     const keyDownHandler = (event) => {
         console.log(event.key);
