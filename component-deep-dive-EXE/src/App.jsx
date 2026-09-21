@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Header from './components/Header'
 
 
 
@@ -8,11 +9,7 @@ function App() {
     
       <>
   {/* Header component */}
-  <header className="header">
-    <div className="logo">
-      <span className="course">React Exercise - Components Deep Dive</span>
-    </div>
-  </header>
+  <Header />
   {/* Main component  */}
   <main className="main">
     <section className="card users-container">
@@ -527,9 +524,7 @@ function App() {
     </div> */}
   </main>
   {/* Footer component  */}
-  <footer className="footer">
-    <p>This site is designed to be used for training purposes at SoftUni.</p>
-  </footer>
+  
 </>
 
     
