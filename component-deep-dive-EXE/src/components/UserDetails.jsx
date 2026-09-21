@@ -1,34 +1,6 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import DeleteUser from './components/DeleteUser'
-import EditCreateUser from './components/Edit-Create-User'
-import UserList from './components/UserList'
-import UserSearch from './components/UserSearch'
-import Pagination from './components/Pagination'
-
-
-
-function App() {
-
-  return (
-    
-      <>
-  {/* Header component */}
-  <Header />
-  {/* Main component  */}
-  <main className="main">
-    <section className="card users-container">
-      <UserSearch />
-      {/* Table component */}
-      <UserList />
-      {/* New user button  */}
-      <button className="btn-add btn">Add new user</button>
-      {/* Pagination component  */}
-      <Pagination />
-    </section>
-    {/* User details component  */}
-    <div class="overlay">
+export default function UserDetails() {
+    return (
+        <div class="overlay">
 <div class="backdrop"></div>
 <div class="modal">
   <div class="detail-container">
@@ -68,17 +40,5 @@ function App() {
   </div>
 </div>
     </div>
-    {/* Create/Edit Form component  */}
-    
-    {/* Delete user component  */}
-    
-  </main>
-  {/* Footer component  */}
-  <Footer />
-</>
-
-    
-  )
+    );
 }
-
-export default App
