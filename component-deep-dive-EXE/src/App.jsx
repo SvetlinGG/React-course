@@ -31,7 +31,7 @@ function App() {
     <section className="card users-container">
       <UserSearch />
       {/* Table component */}
-      <UserList />
+      <UserList users={users} />
       {/* New user button  */}
       
       {/* Pagination component  */}
