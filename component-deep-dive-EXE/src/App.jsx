@@ -13,9 +13,15 @@ import UserDetails from './components/UserDetails'
 function App() {
 
   const [users, setUsers] = useState([]);
+  console.log(users);
+  
 
   useEffect(() => {
-    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users')
+    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
+      headers: {
+        'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+      }
+    })
     .then(res => res.json())
     .then(data => setUsers(data))
     .catch(err => console.error(err))
