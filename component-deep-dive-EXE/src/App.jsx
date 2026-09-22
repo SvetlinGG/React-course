@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import DeleteUser from './components/DeleteUser'
@@ -11,6 +11,15 @@ import UserDetails from './components/UserDetails'
 
 
 function App() {
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users')
+    .then(res => res.json())
+    .then(data => setUsers(data))
+    .catch(err => console.error(err))
+  },[])
 
   return (
     
