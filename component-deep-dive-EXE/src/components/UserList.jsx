@@ -1,8 +1,10 @@
+import Spinner from "./Spinner";
+
 export default function UserList() {
     return (
         <>
         <div className="table-wrapper">
-        
+        {/* <Spinner /> */}
         <table className="table">
           <thead>
             <tr>
