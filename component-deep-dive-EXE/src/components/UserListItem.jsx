@@ -3,8 +3,8 @@ export default function UserListItem({
     firstName,
     lastName,
     email,
-    phone,
-    craetedAt,
+    phoneNumber,
+    createdAt,
     imageUrl
 }) {
     return (
@@ -19,8 +19,8 @@ export default function UserListItem({
               <td>{firstName}</td>
               <td>{lastName}</td>
               <td>{email}</td>
-              <td>{phone}</td>
-              <td>{craetedAt}</td>
+              <td>{phoneNumber}</td>
+              <td>{createdAt}</td>
               <td className="actions">
                 <button className="btn edit-btn" title="Edit">
                   <svg
