@@ -3,7 +3,7 @@ export default function EditCreateUser({
 }) {
     return (
         <div class="overlay">
-<div class="backdrop"></div>
+<div class="backdrop" onClick={onClose}></div>
 <div class="modal">
   <div class="user-container">
     <header class="headers">
