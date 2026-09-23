@@ -1,5 +1,6 @@
 export default function EditCreateUser({
-  onClose
+  onClose,
+  onSubmit
 }) {
 
    saveClickHandler = (e) => {
@@ -9,7 +10,7 @@ export default function EditCreateUser({
 
      formData = new FormData(e.target.form);
 
-     employee = {
+     const employee = {
        firstName: formData.get('firstName'),
        lastName: formData.get('lastName'),
        email: formData.get('email'),
@@ -21,9 +22,8 @@ export default function EditCreateUser({
         street: formData.get('street'),
         streetNumber: formData.get('streetNumber')
        }
-       
     }
-    
+    onSubmit(employee);
   }
 
 

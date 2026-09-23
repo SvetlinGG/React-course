@@ -27,6 +27,25 @@ function App() {
     .catch(err => console.error(err))
   },[])
 
+  
+    
+    // fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
+    //   method: 'POST',
+    //   headers: {
+    //     'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
+    //     'Content-Type': 'application/json',
+    //     'Authorization': 'Bearer sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+    //   },
+    //   body: JSON.stringify(userData)
+    // })
+    // .then(res => res.json())
+    // .then(data => {
+    //   console.log(data);
+    //   setUsers(prevState => [...prevState, data])
+    // })
+    // .catch(err => console.error(err))
+  }
+
   const addUserClickHandler = () => {
     setShowSaveUserModal(true)
 
@@ -35,6 +54,9 @@ function App() {
   const addUserCloseHandler = () => {
     setShowSaveUserModal(false)
   }
+
+  const submitUserHandler = (user) => {
+    console.log(user);
 
   return (
     
@@ -50,7 +72,7 @@ function App() {
       {/* New user button  */}
       <button className="btn-add btn" onClick={addUserClickHandler}>Add new user</button>
 
-      {showSaveUserModal && <EditCreateUser onClose={addUserCloseHandler} />}
+      {showSaveUserModal && <EditCreateUser onClose={addUserCloseHandler} onSubmit={submitUserHandler} />}
       {/* Pagination component  */}
       <Pagination />
     </section>
