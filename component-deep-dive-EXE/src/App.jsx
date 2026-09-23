@@ -8,6 +8,8 @@ import UserSearch from './components/UserSearch'
 import Pagination from './components/Pagination'
 import UserDetails from './components/UserDetails'
 
+const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
   
 
   useEffect(() => {
-    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
+    fetch( baseURL, {
       headers: {
         'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
       }
@@ -28,7 +30,7 @@ function App() {
   },[])
 
   const saveUserHandler = (userData) => {
-    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
+    fetch( baseURL, {
       method: 'POST',
       headers: {
         'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
@@ -55,7 +57,18 @@ function App() {
   }
 
   const submitUserHandler = (user) => {
-    console.log(user);
+    // send user to database (REST API)
+    fetch(baseURL, {
+      method: 'POST',
+      headers: {
+        'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
+        'Content-Type': 'application/json',
+        
+      },
+      body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data => setUsers(prevState => [...prevState, data]))
   }
 
   return (
