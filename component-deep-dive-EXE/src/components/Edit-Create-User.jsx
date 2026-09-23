@@ -4,6 +4,7 @@ export default function EditCreateUser({
 
   const saveClickHandler = (e) => {
     e.preventDefault();
+    console.log('click');
     
   }
 
@@ -24,7 +25,7 @@ export default function EditCreateUser({
         </svg>
       </button>
     </header>
-    <form>
+    <form onClick={saveClickHandler}>
       <div class="form-row">
         <div class="form-group">
           <label for="firstName">First name</label>
@@ -101,7 +102,7 @@ export default function EditCreateUser({
         </div>
       </div>
       <div id="form-actions">
-        <button id="action-save" class="btn" type="submit" onClick={saveClickHandler}>Save</button>
+        <button id="action-save" class="btn" type="submit" >Save</button>
         <button id="action-cancel" class="btn" type="button" onClick={onClose}>
           Cancel
         </button>
