@@ -27,23 +27,22 @@ function App() {
     .catch(err => console.error(err))
   },[])
 
-  
-    
-    // fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
-    //     'Content-Type': 'application/json',
-    //     'Authorization': 'Bearer sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
-    //   },
-    //   body: JSON.stringify(userData)
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //   console.log(data);
-    //   setUsers(prevState => [...prevState, data])
-    // })
-    // .catch(err => console.error(err))
+  const saveUserHandler = (userData) => {
+    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
+      method: 'POST',
+      headers: {
+        'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+      },
+      body: JSON.stringify(userData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      setUsers(prevState => [...prevState, data])
+    })
+    .catch(err => console.error(err))
   }
 
   const addUserClickHandler = () => {
@@ -57,6 +56,7 @@ function App() {
 
   const submitUserHandler = (user) => {
     console.log(user);
+  }
 
   return (
     
@@ -85,7 +85,7 @@ function App() {
   </main>
   {/* Footer component  */}
   <Footer />
-</>
+  </>
 
     
   )
