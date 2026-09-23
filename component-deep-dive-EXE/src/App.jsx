@@ -67,9 +67,10 @@ function App() {
       },
       body: JSON.stringify(user)
     })
-    .then(res => res.json())
-    .then(data => setUsers(prevState => [...prevState, data]))
+    
+    .then(() => console.log('User saved!'))
     .catch(err => console.error(err))
+    .finally(() => setShowSaveUserModal(false))
   }
 
   return (
