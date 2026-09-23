@@ -4,8 +4,20 @@ export default function EditCreateUser({
 
   const saveClickHandler = (e) => {
     e.preventDefault();
-    console.log('click');
+    //console.log('click');
     
+
+    const formData = new FormData(e.target.form);
+
+    const firstName = formData.get('firstName');
+    const lastName = formData.get('lastName');
+    const email = formData.get('email');
+    const phoneNumber = formData.get('phoneNumber');
+    const country = formData.get('country');
+    const imageUrl = formData.get('imageUrl');
+    const city = formData.get('city');
+    const street = formData.get('street');
+    const streetNumber = formData.get('streetNumber');
   }
 
 
