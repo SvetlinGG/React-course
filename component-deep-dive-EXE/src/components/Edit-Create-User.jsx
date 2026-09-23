@@ -2,22 +2,28 @@ export default function EditCreateUser({
   onClose
 }) {
 
-  const saveClickHandler = (e) => {
+   saveClickHandler = (e) => {
     e.preventDefault();
     //console.log('click');
     
 
-    const formData = new FormData(e.target.form);
+     formData = new FormData(e.target.form);
 
-    const firstName = formData.get('firstName');
-    const lastName = formData.get('lastName');
-    const email = formData.get('email');
-    const phoneNumber = formData.get('phoneNumber');
-    const country = formData.get('country');
-    const imageUrl = formData.get('imageUrl');
-    const city = formData.get('city');
-    const street = formData.get('street');
-    const streetNumber = formData.get('streetNumber');
+     employee = {
+       firstName: formData.get('firstName'),
+       lastName: formData.get('lastName'),
+       email: formData.get('email'),
+       phoneNumber: formData.get('phoneNumber'),
+       imageUrl: formData.get('imageUrl'),
+       address: {
+        country: formData.get('country'),
+        city: formData.get('city'),
+        street: formData.get('street'),
+        streetNumber: formData.get('streetNumber')
+       }
+       
+    }
+    
   }
 
 
