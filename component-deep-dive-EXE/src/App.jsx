@@ -69,6 +69,7 @@ function App() {
     })
     .then(res => res.json())
     .then(data => setUsers(prevState => [...prevState, data]))
+    .catch(err => console.error(err))
   }
 
   return (
