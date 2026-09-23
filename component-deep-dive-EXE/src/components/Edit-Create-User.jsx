@@ -95,7 +95,7 @@ export default function EditCreateUser({
       </div>
       <div id="form-actions">
         <button id="action-save" class="btn" type="submit">Save</button>
-        <button id="action-cancel" class="btn" type="button">
+        <button id="action-cancel" class="btn" type="button" onClick={onClose}>
           Cancel
         </button>
       </div>
