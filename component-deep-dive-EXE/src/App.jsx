@@ -13,7 +13,7 @@ import UserDetails from './components/UserDetails'
 function App() {
 
   const [users, setUsers] = useState([]);
-  console.log(users);
+  const [showSaveUserModal, setShowSaveUserModal] = useState(false)
   
 
   useEffect(() => {
@@ -27,6 +27,11 @@ function App() {
     .catch(err => console.error(err))
   },[])
 
+  const addUserClickHandler = () => {
+    setShowSaveUserModal(true)
+
+  }
+
   return (
     
       <>
@@ -39,7 +44,9 @@ function App() {
       {/* Table component */}
       <UserList users={users} />
       {/* New user button  */}
-      <button className="btn-add btn">Add new user</button>
+      <button className="btn-add btn" onClick={addUserClickHandler}>Add new user</button>
+
+      {showSaveUserModal && <EditCreateUser />}
       {/* Pagination component  */}
       <Pagination />
     </section>
