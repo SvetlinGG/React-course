@@ -1,6 +1,13 @@
 export default function EditCreateUser({
   onClose
 }) {
+
+  const saveClickHandler = (e) => {
+    e.preventDefault();
+    
+  }
+
+
     return (
         <div class="overlay">
 <div class="backdrop" onClick={onClose}></div>
