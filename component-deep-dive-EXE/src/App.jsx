@@ -29,16 +29,7 @@ function App() {
     .catch(err => console.error(err))
   },[]);
 
-  const fetchUsers = async () => {
-      const response = await fetch( baseURL, {
-      headers: {
-        'apikey': apiKey
-      }
-    })
-
-    const data = await response.json();
-    setUsers(data);
-  }
+  
 
 
   const saveUserHandler = (userData) => {
@@ -46,8 +37,8 @@ function App() {
       method: 'POST',
       headers: {
         'apikey': apiKey,
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+        'Content-Type': 'application/json'
+        
       },
       body: JSON.stringify(userData)
     })
@@ -74,7 +65,7 @@ function App() {
       method: 'POST',
       headers: {
         'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
         
       },
       body: JSON.stringify(user)
@@ -117,5 +108,16 @@ function App() {
     
   )
 }
+
+async function fetchUsers(){
+      const response = await fetch( baseURL, {
+      headers: {
+        'apikey': apiKey
+      }
+    })
+
+    const data = await response.json();
+    return data;
+  }
 
 export default App
