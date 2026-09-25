@@ -1,4 +1,14 @@
-export default function UserDetails() {
+export default function UserDetails({
+    id,
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    address,
+    createdAt,
+    modifiedAt,
+    imageUrl,
+}) {
     return (
         <div class="overlay">
 <div class="backdrop"></div>
@@ -21,10 +31,10 @@ export default function UserDetails() {
           class="image" />
       </div>
       <div class="user-details">
-        <p>User Id: <strong>62bb0c0eda039e2fdccba57b</strong></p>
+        <p>User Id: <strong>{id}</strong></p>
         <p>
           Full Name:
-          <strong> Peter Johnson </strong>
+          <strong>{firstName} {lastName}</strong>
         </p>
         <p>Email: <strong>peter@abv.bg</strong></p>
         <p>Phone Number: <strong>0812345678</strong></p>

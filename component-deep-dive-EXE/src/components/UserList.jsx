@@ -9,7 +9,7 @@ export default function UserList({
 }) {
   const [showUserDetails, setShowUserDetails ] = useState(false);
 
-  const showUserDetailHandler = () => {
+  const showUserDetailHandler = (userId) => {
     setShowUserDetails(true);
 
   }
