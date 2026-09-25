@@ -65,7 +65,11 @@ function App() {
         
       },
       body: JSON.stringify(user)
-    })
+    });
+
+    const updatedUsers = await fetchUsers();
+    setUsers(updatedUsers);
+    
     } catch (error) {
       alert('Error adding user: ' + error)
     }finally{
