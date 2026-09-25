@@ -9,7 +9,7 @@ import Pagination from './components/Pagination'
 import UserDetails from './components/UserDetails'
 
 const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
-
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     fetch( baseURL, {
       headers: {
-        'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+        'apikey': apiKey
       }
     })
     .then(res => res.json())
@@ -33,7 +33,7 @@ function App() {
     fetch( baseURL, {
       method: 'POST',
       headers: {
-        'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
+        'apikey': apiKey,
         'Content-Type': 'application/json',
         'Authorization': 'Bearer sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
       },
