@@ -35,6 +35,9 @@ function App() {
         'apikey': apiKey
       }
     })
+
+    const data = await response.json();
+    setUsers(data);
   }
 
 
