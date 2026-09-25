@@ -27,7 +27,16 @@ function App() {
     .then(res => res.json())
     .then(data => setUsers(data))
     .catch(err => console.error(err))
-  },[])
+  },[]);
+
+  const fetchUsers = async () => {
+      const response = await fetch( baseURL, {
+      headers: {
+        'apikey': apiKey
+      }
+    })
+  }
+
 
   const saveUserHandler = (userData) => {
     fetch( baseURL, {
