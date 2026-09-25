@@ -118,7 +118,13 @@ export default function UserList({
           </thead>
           <tbody>
             {/* Table row component */}
-            {users.map(user => <UserListItem key={user.id} {...user} />)}
+            {users.map(user => (
+              <UserListItem 
+              key={user.id} 
+              onInfo={showUserDetailHandler}
+              {...user} 
+              />
+            ))}
           </tbody>
         </table>
 
