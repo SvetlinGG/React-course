@@ -1,10 +1,20 @@
+import { useState } from 'react';
 import Spinner from "./Spinner";
+import UserDetails from "./UserDetails";
 import UserListItem from "./UserListItem";
 
 export default function UserList({
     users
 
 }) {
+  const [showUserDetails, setShowUserDetails ] = useState(false);
+
+  const showUserDetailHandler = () => {
+    setShowUserDetails(true);
+
+  }
+
+
     return (
         <>
         <div className="table-wrapper">
@@ -111,6 +121,8 @@ export default function UserList({
             {users.map(user => <UserListItem key={user.id} {...user} />)}
           </tbody>
         </table>
+
+        {showUserDetails && <UserDetails />}
       </div>
       
       </>

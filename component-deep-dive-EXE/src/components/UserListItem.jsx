@@ -58,7 +58,7 @@ export default function UserListItem({
                     ></path>
                   </svg>
                 </button>
-                <button className="btn info-btn" title="Info">
+                <button className="btn info-btn" title="Info" onClick={console.log('I am info button')}>
                   <svg
                     aria-hidden="true"
                     focusable="false"
