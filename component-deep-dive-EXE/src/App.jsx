@@ -19,12 +19,7 @@ function App() {
   
 
   useEffect(() => {
-    fetch( baseURL, {
-      headers: {
-        'apikey': apiKey
-      }
-    })
-    .then(res => res.json())
+    fetchUsers()
     .then(data => setUsers(data))
     .catch(err => console.error(err))
   },[]);
@@ -59,9 +54,10 @@ function App() {
     setShowSaveUserModal(false)
   }
 
-  const submitUserHandler = (user) => {
+  const submitUserHandler = async (user) => {
     // send user to database (REST API)
-    fetch(baseURL, {
+    try {
+      await fetch(baseURL, {
       method: 'POST',
       headers: {
         'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
@@ -70,10 +66,11 @@ function App() {
       },
       body: JSON.stringify(user)
     })
-    
-    .then(() => console.log('User saved!'))
-    .catch(err => console.error(err))
-    .finally(() => setShowSaveUserModal(false))
+    } catch (error) {
+      alert('Error adding user: ' + error)
+    }finally{
+      setShowSaveUserModal(false)
+    }
   }
 
   return (
