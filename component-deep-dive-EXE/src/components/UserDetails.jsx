@@ -1,29 +1,24 @@
 import { useState } from 'react';
 import { useEffect } from "react";
+import { fromIsoDate } from '../utils/dateTimeUtils';
 
 const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
 export default function UserDetails({
     userId,
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    address,
-    createdAt,
-    modifiedAt,
-    imageUrl,
+    // firstName,
+    // lastName,
+    // imageUrl,
+    // email,
+    // phoneNumber,
+    // address,
+    // created,
+    // modified,
+    // onClose,
 }) {
 
-  const [user, setUser] = useState({
-    id: userId,
-    fullName: `${firstName} ${lastName}`,
-    email: email,
-    phone: phoneNumber,
-    address: address,
-    created: createdAt,
-    image: imageUrl,});
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     fetch(`${baseURL}?id=eq.${userId}`, {
@@ -37,14 +32,18 @@ export default function UserDetails({
   )},[userId])
 
 
+  const closeHandler = () => setUser(null);
+
+  if (!user) return null;
+
     return (
-        <div class="overlay">
-<div class="backdrop"></div>
-<div class="modal">
-  <div class="detail-container">
-    <header class="headers">
+        <div className="overlay">
+<div className="backdrop" onClick={closeHandler}></div>
+<div className="modal">
+  <div className="detail-container">
+    <header className="headers">
       <h2>User Detail</h2>
-      <button class="btn close">
+      <button className="btn close" onClick={closeHandler}>
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark"
           class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
           <path fill="currentColor"
@@ -53,26 +52,26 @@ export default function UserDetails({
         </svg>
       </button>
     </header>
-    <div class="content">
-      <div class="image-container">
-        <img src={user.image} alt=""
-          class="image" />
+    <div className="content">
+      <div className="image-container">
+        <img src={user.imageUrl} alt={user.firstName}
+          className="image" />
       </div>
-      <div class="user-details">
+      <div className="user-details">
         <p>User Id: <strong>{user.id}</strong></p>
         <p>
           Full Name:
-          <strong>{user.fullName}</strong>
+          <strong>{user.firstName} {user.lastName}</strong>
         </p>
         <p>Email: <strong>{user.email}</strong></p>
-        <p>Phone Number: <strong>{user.phone}</strong></p>
+        <p>Phone Number: <strong>{user.phoneNumber}</strong></p>
         <p>
           Address:
-          <strong>{address}</strong>
+          <strong>{user.address?.country}, {user.address?.city}, {user.address?.street}, {user.address?.streetNumber}</strong>
         </p>
 
-        <p>Created on: <strong>{user.created}</strong></p>
-        <p>Modified on: <strong>Thursday, June 29, 2022</strong></p>
+        <p>Created on: <strong>{fromIsoDate(user.created)}</strong></p>
+        <p>Modified on: <strong>{fromIsoDate(user.modified)}</strong></p>
       </div>
     </div>
   </div>
