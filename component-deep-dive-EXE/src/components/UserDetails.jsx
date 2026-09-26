@@ -1,5 +1,10 @@
+import { useEffect } from "react";
+
+const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
+
 export default function UserDetails({
-    id,
+    userId,
     firstName,
     lastName,
     email,
@@ -9,6 +14,12 @@ export default function UserDetails({
     modifiedAt,
     imageUrl,
 }) {
+
+  useEffect(() => {
+
+  },[userId])
+
+
     return (
         <div class="overlay">
 <div class="backdrop"></div>
@@ -31,10 +42,10 @@ export default function UserDetails({
           class="image" />
       </div>
       <div class="user-details">
-        <p>User Id: <strong>{id}</strong></p>
+        <p>User Id: <strong>{userId}</strong></p>
         <p>
           Full Name:
-          <strong>{firstName} {lastName}</strong>
+          <strong>{firstName}</strong>
         </p>
         <p>Email: <strong>peter@abv.bg</strong></p>
         <p>Phone Number: <strong>0812345678</strong></p>

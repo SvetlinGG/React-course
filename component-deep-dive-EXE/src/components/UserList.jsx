@@ -8,8 +8,11 @@ export default function UserList({
 
 }) {
   const [showUserDetails, setShowUserDetails ] = useState(false);
+  const [selectedUserId, setSelectedUserId] = useState(null);
 
   const showUserDetailHandler = (userId) => {
+  
+    setSelectedUserId(userId);
     setShowUserDetails(true);
 
   }
@@ -128,7 +131,7 @@ export default function UserList({
           </tbody>
         </table>
 
-        {showUserDetails && <UserDetails />}
+        {showUserDetails && <UserDetails userId={selectedUserId} />}
       </div>
       
       </>

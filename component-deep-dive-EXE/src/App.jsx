@@ -9,7 +9,7 @@ import Pagination from './components/Pagination'
 import UserDetails from './components/UserDetails'
 
 const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
-const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
 
     const updatedUsers = await fetchUsers();
     setUsers(updatedUsers);
-    
+
     } catch (error) {
       alert('Error adding user: ' + error)
     }finally{
