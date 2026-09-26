@@ -159,7 +159,7 @@ export default function UserList({
               <UserListItem 
               key={user.id} 
               onInfo={showUserDetailHandler}
-              onDelete={setShowUserDelete}
+              onDelete={showUserDeleteHandler}
               {...user} 
               />
             ))}
