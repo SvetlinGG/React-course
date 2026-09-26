@@ -5,28 +5,10 @@ const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
 export default function DeleteUser({
   onClose,
-  userData
+  onDelete
 }) {
 
-  
-
-  
-  
-
-  const deleteUser = () => {
-    fetch( baseURL, {
-      method: 'DELETE',
-      headers: {
-        'apikey': apiKey,
-        'Content-Type': 'application/json'
-        
-      },
-      body: JSON.stringify(userData)
-    })
-    
-    .catch(err => console.error(err))
-  }
-  
+ 
 
     return (
         <div class="overlay">
@@ -46,7 +28,7 @@ export default function DeleteUser({
     </header>
     <div class="actions">
       <div id="form-actions">
-        <button id="action-save" class="btn" type="submit" onClick={deleteUser}>Delete</button>
+        <button id="action-save" class="btn" type="submit" onClick={onDelete}>Delete</button>
         <button id="action-cancel" class="btn" type="button" onClick={onClose}>
           Cancel
         </button>

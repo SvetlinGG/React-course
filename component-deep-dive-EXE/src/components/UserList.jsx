@@ -20,13 +20,36 @@ export default function UserList({
   const showUserDetailHandler = (userId) => {
     setSelectedUserId(userId);
     setShowUserDetails(true);
-    setShowUserDelete(true)
+    //setShowUserDelete(true)
   }
 
   const hideModalHandler = () => {
     setShowUserDetails(false);
     setShowUserDelete(false);
+    setSelectedUserId(null);
   }
+
+  const deleteUserHandler = async () => {
+        try {
+            await fetch(`${baseUrl}?id=eq.${selectedUserId}`, {
+                method: 'DELETE',
+                headers: {
+                    'apikey': apiKey,
+                }
+            });
+
+            onUserUpdate();
+        } catch (error) {
+            console.error('Failed to delete user:', error);
+        } finally {
+            hideModalHandler();
+        }
+    }
+
+    const editUserHandler = (userId) => {
+        setSelectedUserId(userId);
+        setShowUserEdit(true);
+    };
 
 
     return (
@@ -143,8 +166,8 @@ export default function UserList({
           </tbody>
         </table>
 
-        {showUserDetails && <UserDetails userId={selectedUserId} />}
-        {showUserDelete && <DeleteUser  onClose={hideModalHandler} />}
+        {showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
+        {showUserDelete && <DeleteUser onClose={hideModalHandler}  onDelete={deleteUserHandler} />}
       </div>
       
       </>
