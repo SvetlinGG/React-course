@@ -3,12 +3,24 @@ import { useState } from "react";
 const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
-export default function DeleteUser() {
+export default function DeleteUser({
+  userId
+}) {
 
   const [user, setUser] = useState({});
 
   const deleteUser = () => {
-    // send delete request to backend
+    fetch( baseURL, {
+      method: 'DELETE',
+      headers: {
+        'apikey': apiKey,
+        'Content-Type': 'application/json'
+        
+      },
+      body: JSON.stringify(userData)
+    })
+    
+    .catch(err => console.error(err))
   }
 
     return (
@@ -29,7 +41,7 @@ export default function DeleteUser() {
     </header>
     <div class="actions">
       <div id="form-actions">
-        <button id="action-save" class="btn" type="submit">Delete</button>
+        <button id="action-save" class="btn" type="submit" onClick={deleteUser}>Delete</button>
         <button id="action-cancel" class="btn" type="button">
           Cancel
         </button>
