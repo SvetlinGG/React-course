@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useEffect } from "react";
 
 const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
@@ -15,6 +16,15 @@ export default function UserDetails({
     imageUrl,
 }) {
 
+  const [user, setUser] = useState({
+    id: userId,
+    fullName: `${firstName} ${lastName}`,
+    email: email,
+    phone: phoneNumber,
+    address: address,
+    created: createdAt,
+    image: imageUrl,});
+
   useEffect(() => {
     fetch(`${baseURL}?id=eq.${userId}`, {
         headers: {
@@ -22,7 +32,7 @@ export default function UserDetails({
         },
       })
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((data) => setUser(data[0]))
         .catch(error => {console.error('Error fetchin using data:', error)}
   )},[userId])
 
@@ -45,23 +55,23 @@ export default function UserDetails({
     </header>
     <div class="content">
       <div class="image-container">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=""
+        <img src={user.image} alt=""
           class="image" />
       </div>
       <div class="user-details">
-        <p>User Id: <strong>{userId}</strong></p>
+        <p>User Id: <strong>{user.id}</strong></p>
         <p>
           Full Name:
-          <strong>{firstName}</strong>
+          <strong>{user.fullName}</strong>
         </p>
-        <p>Email: <strong>peter@abv.bg</strong></p>
-        <p>Phone Number: <strong>0812345678</strong></p>
+        <p>Email: <strong>{user.email}</strong></p>
+        <p>Phone Number: <strong>{user.phone}</strong></p>
         <p>
           Address:
-          <strong> Bulgaria, Sofia, Aleksandar Malinov 78 </strong>
+          <strong>{address}</strong>
         </p>
 
-        <p>Created on: <strong>Wednesday, June 28, 2022</strong></p>
+        <p>Created on: <strong>{user.created}</strong></p>
         <p>Modified on: <strong>Thursday, June 29, 2022</strong></p>
       </div>
     </div>
