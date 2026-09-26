@@ -12,11 +12,20 @@ export default function UserList({
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [showUserDelete, setShowUserDelete] = useState(false);
 
+  const showUserDeleteHandler = (userId) => {
+    setSelectedUserId(userId);
+    setShowUserDelete(true);
+  }
+
   const showUserDetailHandler = (userId) => {
-  
     setSelectedUserId(userId);
     setShowUserDetails(true);
+    setShowUserDelete(true)
+  }
 
+  const hideModalHandler = () => {
+    setShowUserDetails(false);
+    setShowUserDelete(false);
   }
 
 
@@ -127,6 +136,7 @@ export default function UserList({
               <UserListItem 
               key={user.id} 
               onInfo={showUserDetailHandler}
+              onDelete={setShowUserDelete}
               {...user} 
               />
             ))}
@@ -134,7 +144,7 @@ export default function UserList({
         </table>
 
         {showUserDetails && <UserDetails userId={selectedUserId} />}
-        {showUserDelete && <DeleteUser userId={selectedUserId} onClose={hideUserDeleteHandler} />}
+        {showUserDelete && <DeleteUser  onClose={hideModalHandler} />}
       </div>
       
       </>
