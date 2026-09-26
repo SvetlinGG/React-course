@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Spinner from "./Spinner";
 import UserDetails from "./UserDetails";
 import UserListItem from "./UserListItem";
+import DeleteUser from './DeleteUser';
 
 export default function UserList({
     users
@@ -9,6 +10,7 @@ export default function UserList({
 }) {
   const [showUserDetails, setShowUserDetails ] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState(null);
+  const [showUserDelete, setShowUserDelete] = useState(false);
 
   const showUserDetailHandler = (userId) => {
   
@@ -132,6 +134,7 @@ export default function UserList({
         </table>
 
         {showUserDetails && <UserDetails userId={selectedUserId} />}
+        {showUserDelete && <DeleteUser userId={selectedUserId} onClose={hideUserDeleteHandler} />}
       </div>
       
       </>

@@ -8,6 +8,8 @@ export default function DeleteUser({
 }) {
 
   const [user, setUser] = useState({});
+  const [selectedUserId, setSelectedUserId] = useState(null);
+  
 
   const deleteUser = () => {
     fetch( baseURL, {
