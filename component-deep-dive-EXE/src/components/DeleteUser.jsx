@@ -1,4 +1,16 @@
+import { useState } from "react";
+
+const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
+
 export default function DeleteUser() {
+
+  const [user, setUser] = useState({});
+
+  const deleteUser = () => {
+    // send delete request to backend
+  }
+
     return (
         <div class="overlay">
 <div class="backdrop"></div>
