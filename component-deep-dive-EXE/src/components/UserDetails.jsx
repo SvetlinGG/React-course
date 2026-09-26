@@ -16,8 +16,15 @@ export default function UserDetails({
 }) {
 
   useEffect(() => {
-
-  },[userId])
+    fetch(`${baseURL}?id=eq.${userId}`, {
+        headers: {
+          apikey: apiKey,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch(error => {console.error('Error fetchin using data:', error)}
+  )},[userId])
 
 
     return (
