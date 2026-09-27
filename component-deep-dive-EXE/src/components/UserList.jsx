@@ -4,8 +4,12 @@ import UserDetails from "./UserDetails";
 import UserListItem from "./UserListItem";
 import DeleteUser from './DeleteUser';
 
+const baseUrl = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
+
 export default function UserList({
-    users
+    users,
+    onUserUpdate
 
 }) {
   const [showUserDetails, setShowUserDetails ] = useState(false);
@@ -48,7 +52,6 @@ export default function UserList({
 
     const editUserHandler = (userId) => {
         setSelectedUserId(userId);
-        setShowUserEdit(true);
     };
 
 
