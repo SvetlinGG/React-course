@@ -4,6 +4,7 @@ import About from './components/About';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import City from './components/City';
+import Redirect from './components/Readirect';
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
+        <Route path='/redirect' element={<Redirect />} />
         <Route path='/cities/:city' element={<City />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
