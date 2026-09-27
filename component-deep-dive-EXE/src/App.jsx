@@ -7,6 +7,7 @@ import UserList from './components/UserList'
 import UserSearch from './components/UserSearch'
 import Pagination from './components/Pagination'
 import UserDetails from './components/UserDetails'
+import { fetchUsers } from './api/usersApi'
 
 const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
@@ -110,15 +111,6 @@ function App() {
   )
 }
 
-async function fetchUsers(){
-      const response = await fetch( baseURL, {
-      headers: {
-        'apikey': apiKey
-      }
-    })
 
-    const data = await response.json();
-    return data;
-  }
 
 export default App
