@@ -78,6 +78,25 @@ function App() {
     }
   }
 
+  const userUpdateHandler = async (updatedUser) => {
+
+    fetch(`${baseURL}?id=eq.${updatedUser.id}`, {
+      method: 'PUT',
+      headers: {
+        'apikey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT',
+        'Content-Type': 'application/json'
+
+      },
+      body: JSON.stringify(updatedUser)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      // setUsers(prevState => [...prevState, data])
+    })
+    .catch(err => console.error(err))
+  }
+
   return (
     
       <>
