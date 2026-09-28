@@ -1,5 +1,5 @@
 
-import {Routes, Route} from 'react-router';
+import {Routes, Route, Link} from 'react-router';
 import About from './components/About';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
@@ -14,9 +14,9 @@ function App() {
       <h1>React Router</h1>
 
       <nav>
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">City</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="cities/pleven">City</Link>
       </nav>
 
       <Routes>
