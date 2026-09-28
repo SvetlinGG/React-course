@@ -5,6 +5,7 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import City from './components/City';
 import Redirect from './components/Readirect';
+import styles from './App.module.css'
 
 function App() {
   
@@ -20,11 +21,9 @@ function App() {
       </nav> */}
 
       <nav>
-        <NavLink style={{color: 'green'}} to="/">Home</NavLink>
-
-        <NavLink style={({isActive}) => ({color: isActive ? 'red' : 'blue'})} to="/about">About</NavLink>
-        
-        <NavLink style={({isActive}) => ({color: isActive ? 'green' : 'yellow'})} to="cities/pleven">City</NavLink>
+        <NavLink className={({isActive}) => isActive ? styles.active : 'red'}  to="/">Home</NavLink>
+        <NavLink className={ ({isActive}) => isActive ? styles.active : styles['selected-link']}  to="/about">About</NavLink>
+        <NavLink className={({isActive}) => isActive ? styles.active : styles['selected-link']} to="cities/pleven">City</NavLink>
       </nav>
 
       <Routes>
