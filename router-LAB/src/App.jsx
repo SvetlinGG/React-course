@@ -8,6 +8,7 @@ import Redirect from './components/Readirect';
 import Dashboard from './components/AdminDashboard';
 import Users from './components/AdminUsers';
 import Posts from './components/AdminPosts';
+import Admin from './components/Admin';
 //import styles from '/App.module.css'
 
 function App() {
@@ -35,8 +36,8 @@ function App() {
         <Route path='/redirect' element={<Redirect />} />
         <Route path='/cities/:city' element={<City />} />
 
-        <Route path='/admin'>
-          <Route path='dashboard' element={<Dashboard />} />
+        <Route path='/admin' element={<Admin />}>
+          <Route index element={<Dashboard />} />
           <Route path='users' element={<Users />} />
           <Route path='posts' element={<Posts />} />
         </Route>
