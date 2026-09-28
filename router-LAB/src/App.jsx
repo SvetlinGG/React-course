@@ -5,7 +5,10 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import City from './components/City';
 import Redirect from './components/Readirect';
-import styles from '/App.module.css'
+import Dashboard from './components/AdminDashboard';
+import Users from './components/AdminUsers';
+import Posts from './components/AdminPosts';
+//import styles from '/App.module.css'
 
 function App() {
   
@@ -14,23 +17,27 @@ function App() {
     <>
       <h1>React Router</h1>
 
-      {/* <nav>
+      <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="cities/pleven">City</Link>
-      </nav> */}
+      </nav>
 
-      <nav>
+      {/* <nav>
         <NavLink className={({isActive}) => isActive ? styles['selected-link'] : ''}  to="/">Home</NavLink>
         <NavLink className={ ({isActive}) => isActive ? styles['selected-link'] : 'blue'}  to="/about">About</NavLink>
         <NavLink className={({isActive}) => isActive ? styles['selected-link'] : 'red'} to="cities/pleven">City</NavLink>
-      </nav>
+      </nav> */}
 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/redirect' element={<Redirect />} />
         <Route path='/cities/:city' element={<City />} />
+
+        <Route path='/admin/dashboard' element={<Dashboard />} />
+        <Route path='/admin/users' element={<Users />} />
+        <Route path='/admin/posts' element={<Posts />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>
