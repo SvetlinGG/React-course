@@ -13,6 +13,12 @@ function App() {
     <>
       <h1>React Router</h1>
 
+      <nav>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">City</a>
+      </nav>
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
