@@ -34,10 +34,13 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/redirect' element={<Redirect />} />
         <Route path='/cities/:city' element={<City />} />
-
-        <Route path='/admin/dashboard' element={<Dashboard />} />
-        <Route path='/admin/users' element={<Users />} />
-        <Route path='/admin/posts' element={<Posts />} />
+        
+        <Route path='/admin'>
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/posts' element={<Posts />} />
+        </Route>
+        
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>
