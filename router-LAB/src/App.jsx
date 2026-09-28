@@ -22,7 +22,7 @@ function App() {
       <nav>
         <NavLink style={{color: 'green'}} to="/">Home</NavLink>
         <NavLink style={({isActive}) => ({color: isActive ? 'red' : 'blue'})} to="/about">About</NavLink>
-        <NavLink to="cities/pleven">City</NavLink>
+        <NavLink style={({isActive}) => ({color: isActive ? 'green' : 'yellow'})} to="cities/pleven">City</NavLink>
       </nav>
 
       <Routes>
