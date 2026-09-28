@@ -1,5 +1,5 @@
 
-import {Routes, Route, Link, NavLink} from 'react-router';
+import {Routes, Route, Link} from 'react-router';
 import About from './components/About';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
@@ -34,11 +34,11 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/redirect' element={<Redirect />} />
         <Route path='/cities/:city' element={<City />} />
-        
+
         <Route path='/admin'>
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/users' element={<Users />} />
-          <Route path='/posts' element={<Posts />} />
+          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='users' element={<Users />} />
+          <Route path='posts' element={<Posts />} />
         </Route>
         
         <Route path='*' element={<NotFound />} />
