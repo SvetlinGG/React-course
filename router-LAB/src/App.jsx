@@ -1,5 +1,5 @@
 
-import {Routes, Route, Link} from 'react-router';
+import {Routes, Route, Link, NavLink} from 'react-router';
 import About from './components/About';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
@@ -13,10 +13,16 @@ function App() {
     <>
       <h1>React Router</h1>
 
-      <nav>
+      {/* <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="cities/pleven">City</Link>
+      </nav> */}
+
+      <nav>
+        <NavLink style={{color: 'green'}} to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="cities/pleven">City</NavLink>
       </nav>
 
       <Routes>
