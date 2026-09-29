@@ -10,9 +10,15 @@ import Users from './components/AdminUsers';
 import Posts from './components/AdminPosts';
 import Admin from './components/Admin';
 import Layout from './components/Layout';
+import { useState } from 'react';
 //import styles from '/App.module.css'
 
 function App() {
+
+  const [user, setUser] = useState({
+    name: 'Pesho',
+    role: 'Admin'
+  })
   
 
   return (
