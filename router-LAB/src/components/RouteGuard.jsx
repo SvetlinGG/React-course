@@ -1,10 +1,9 @@
+import { Outlet } from 'react-router'
 import { Navigate } from 'react-router-dom'
 export default function RouteGuard({user}) {
 
     if (!user){
         return <Navigate to='/login'/>
     }
-    return (
-        
-    );
+    return <Outlet />
 }
