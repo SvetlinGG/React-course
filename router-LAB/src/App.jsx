@@ -58,6 +58,7 @@ function App() {
       </Routes>
 
       <Route element={<RouteGuard />}>
+        <Route path='/profile' element={<Profile username={user.name} />} />
       </Route>
 
 
