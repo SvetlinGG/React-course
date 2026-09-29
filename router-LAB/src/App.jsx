@@ -9,6 +9,7 @@ import Dashboard from './components/AdminDashboard';
 import Users from './components/AdminUsers';
 import Posts from './components/AdminPosts';
 import Admin from './components/Admin';
+import Layout from './components/Layout';
 //import styles from '/App.module.css'
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
         
         <Route path='*' element={<NotFound />} />
 
-        <Route>
+        <Route element={<Layout />}>
           <Route path='/layout-demo' element={<h3>Indside Layout</h3>} />
         </Route>
       </Routes>
