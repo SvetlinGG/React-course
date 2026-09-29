@@ -13,6 +13,7 @@ import Layout from './components/Layout';
 import { useState } from 'react';
 import RouteGuard from './components/RouteGuard';
 import Profile from './components/Profile';
+import Login from './components/Login';
 //import styles from '/App.module.css'
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/redirect' element={<Redirect />} />
         <Route path='/cities/:city' element={<City />} />
+        <Route path='/login' element={<Login />} />
 
         <Route path='/admin' element={<Admin />}>
           <Route index element={<Dashboard />} />
