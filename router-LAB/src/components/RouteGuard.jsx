@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router'
-import { Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router'
 export default function RouteGuard({user}) {
 
     if (!user){

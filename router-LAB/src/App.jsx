@@ -12,14 +12,12 @@ import Admin from './components/Admin';
 import Layout from './components/Layout';
 import { useState } from 'react';
 import RouteGuard from './components/RouteGuard';
+import Profile from './components/Profile';
 //import styles from '/App.module.css'
 
 function App() {
 
-  const [user, setUser] = useState({
-    name: 'Pesho',
-    role: 'Admin'
-  })
+  const [user, setUser] = useState(null)
   
 
   return (
@@ -29,7 +27,9 @@ function App() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="cities/pleven">City</Link>
+        <Link to="/cities/pleven">City</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/admin">Admin</Link>
       </nav>
 
       {/* <nav>
@@ -55,11 +55,13 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/layout-demo' element={<h3>Indside Layout</h3>} />
         </Route>
+
+        <Route element={<RouteGuard user={user}/>}>
+          <Route path='/profile' element={<Profile />} />
+        </Route>
       </Routes>
 
-      <Route element={<RouteGuard />}>
-        <Route path='/profile' element={<Profile username={user.name} />} />
-      </Route>
+      
 
 
     </>

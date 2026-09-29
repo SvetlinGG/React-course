@@ -2,3 +2,9 @@
     color: green;
     text-decoration: underline;
 }
+
+nav {
+    display: flex;
+    border:1px solid red;
+    gap:50px;
+}
