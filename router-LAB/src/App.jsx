@@ -11,6 +11,7 @@ import Posts from './components/AdminPosts';
 import Admin from './components/Admin';
 import Layout from './components/Layout';
 import { useState } from 'react';
+import RouteGuard from './components/RouteGuard';
 //import styles from '/App.module.css'
 
 function App() {
@@ -55,6 +56,11 @@ function App() {
           <Route path='/layout-demo' element={<h3>Indside Layout</h3>} />
         </Route>
       </Routes>
+
+      <Route element={<RouteGuard />}>
+      </Route>
+
+
     </>
   )
 }
