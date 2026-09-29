@@ -1,7 +1,7 @@
 import { Navigate } from "react-router";
 
 export default function Profile({
-    username
+    user
 }) {
 
     // if (!username){
@@ -11,7 +11,7 @@ export default function Profile({
         <>
         <h2>Profile</h2>
 
-        <strong>{username}</strong>
+        <strong>{user.username}</strong>
         </>
     );
 }

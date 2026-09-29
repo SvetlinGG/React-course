@@ -18,7 +18,11 @@ import Login from './components/Login';
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({
+    username: 'Svetlin',
+    role: 'Admin'
+
+  })
   
 
   return (
@@ -59,7 +63,7 @@ function App() {
         </Route>
 
         <Route element={<RouteGuard user={user}/>}>
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<Profile user={user} />} />
         </Route>
       </Routes>
 
