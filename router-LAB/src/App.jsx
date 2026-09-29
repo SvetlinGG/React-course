@@ -43,6 +43,10 @@ function App() {
         </Route>
         
         <Route path='*' element={<NotFound />} />
+
+        <Route>
+          <Route path='/layout-demo' element={<h3>Indside Layout</h3>} />
+        </Route>
       </Routes>
     </>
   )
