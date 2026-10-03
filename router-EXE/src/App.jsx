@@ -18,8 +18,9 @@ function App() {
   return (
     <>
       <Header />
-      <Home />
+  
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="catalog" element={<Catalog />} />
@@ -28,6 +29,7 @@ function App() {
         <Route path="details" element={<Details />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      
       <Footer />
     </>
   )
