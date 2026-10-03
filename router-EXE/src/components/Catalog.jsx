@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 export default function Catalog() {
     return (
         <section id="catalog-page">
@@ -9,9 +11,9 @@ export default function Catalog() {
       <div className="details-overlay">
         <p className="name">The Witcher 3</p>
         <p className="genre">Open World</p>
-        <a href="#" className="details-button">
+        <Link to="/details" className="details-button">
           Details
-        </a>
+        </Link>
       </div>
     </div>
     <div className="game">
@@ -19,9 +21,9 @@ export default function Catalog() {
       <div className="details-overlay">
         <p className="name">Elden Ring</p>
         <p className="genre">Action RPG</p>
-        <a href="/details" className="details-button">
+        <Link to="/details" className="details-button">
           Details
-        </a>
+        </Link>
       </div>
     </div>
     <div className="game">
@@ -29,9 +31,9 @@ export default function Catalog() {
       <div className="details-overlay">
         <p className="name">Minecraft</p>
         <p className="genre">Sandbox</p>
-        <a href="/details" className="details-button">
+        <Link to="/details" className="details-button">
           Details
-        </a>
+        </Link>
       </div>
     </div>
     <div className="game">
@@ -39,9 +41,9 @@ export default function Catalog() {
       <div className="details-overlay">
         <p className="name">Cyberpunk 2077</p>
         <p className="genre">Action RPG</p>
-        <a href="/details" className="details-button">
+        <Link to="/details" className="details-button">
           Details
-        </a>
+        </Link>
       </div>
     </div>
   </div>
