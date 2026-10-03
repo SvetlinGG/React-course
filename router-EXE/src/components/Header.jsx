@@ -7,16 +7,16 @@ export default function Header() {
       {" "}
       <img src="/images/logo.png" alt="logo" />{" "}
     </a>
-    <a href="#">Catalog</a>
+    <a href="/catalog">Catalog</a>
     {/* Logged-in users */}
     <div id="user">
       <a href="/create">Add Game</a>
-      <a href="#">Logout</a>
+      <a href="/login">Logout</a>
     </div>
     {/* Guest users */}
     <div id="guest">
-      <a href="#">Login</a>
-      <a href="#">Register</a>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
     </div>
   </nav>
 </header>

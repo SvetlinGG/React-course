@@ -19,7 +19,7 @@ export default function Catalog() {
       <div className="details-overlay">
         <p className="name">Elden Ring</p>
         <p className="genre">Action RPG</p>
-        <a href="#" className="details-button">
+        <a href="/details" className="details-button">
           Details
         </a>
       </div>
@@ -29,7 +29,7 @@ export default function Catalog() {
       <div className="details-overlay">
         <p className="name">Minecraft</p>
         <p className="genre">Sandbox</p>
-        <a href="#" className="details-button">
+        <a href="/details" className="details-button">
           Details
         </a>
       </div>
@@ -39,7 +39,7 @@ export default function Catalog() {
       <div className="details-overlay">
         <p className="name">Cyberpunk 2077</p>
         <p className="genre">Action RPG</p>
-        <a href="#" className="details-button">
+        <a href="/details" className="details-button">
           Details
         </a>
       </div>
