@@ -9,9 +9,9 @@ export default function Details() {
   useEffect(() => {
     request(`/games?id=eq.${gameId}`)
       .then(result => {
-        console.log(result[0]);
-        
+        setGame(result[0]);
       })
+      .catch(err => alert(err))
   },[gameId])
 
 
