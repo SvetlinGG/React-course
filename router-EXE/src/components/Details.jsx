@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import request from "../utils/request";
 
 export default function Details() {
   const {gameId} = useParams();
+  const navigate = useNavigate();
   const [game, setGame] = useState({})
 
   useEffect(() => {
@@ -15,18 +17,18 @@ export default function Details() {
   },[gameId])
 
   
-  async function deleteGameHandler(e){
+  const deleteGameHandler = async (e) =>{
     e.preventDefault();
 
     if(window.confirm(`Are you sure you want to delete ${game.title}?`)) {
       try {
-        const result = await request(`/games?id=eq.${gameId}`, "DELETE")
-        console.log(result);
+        await request(`/games?id=eq.${gameId}`, "DELETE")
+        navigate('/catalog')
       } catch(err) {
         alert(err)
       }
-    
   }
+}
 
 
     return (
