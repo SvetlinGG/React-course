@@ -1,6 +1,7 @@
 import { Link} from 'react-router'
 
 export default function GameCard({
+    id,
     title,
     genre,
     imageUrl,
@@ -11,7 +12,7 @@ export default function GameCard({
             <div className="details-overlay">
             <p className="name">{title}</p>
             <p className="genre">{genre}</p>
-                <Link to="/details" className="details-button">
+                <Link to={`/games/${id}`} className="details-button">
                 Details
                 </Link>
         </div>
