@@ -3,8 +3,8 @@ import { useParams } from "react-router";
 import request from "../utils/request";
 
 export default function Details() {
-  const {gameId} = useParams;
-  const [game, setGame] = useState(null)
+  const {gameId} = useParams();
+  const [game, setGame] = useState({})
 
   useEffect(() => {
     request(`/games?id=eq.${gameId}`)
@@ -22,34 +22,27 @@ export default function Details() {
     <div className="header-and-image">
       <img
         className="game-img"
-        src={gameId.imageUrl}
+        src={game.imageUrl}
         alt={game.title}
       />
       <div className="meta-info">
         <h1 className="game-name">{game.title}</h1>
         <p className="data-row">
-          <span className="label">{game.genre}</span>
-          <span className="value">Action RPG</span>
+          <span className="label">Genre:</span>
+          <span className="value">{game.genre}</span>
         </p>
         <p className="data-row">
           <span className="label">Active Players:</span>
-          <span className="value">100000</span>
+          <span className="value">{game.activePlayers}</span>
         </p>
         <p className="data-row">
           <span className="label">Release Date:</span>
-          <span className="value">2022-02-25</span>
+          <span className="value">{game.releaseDate}</span>
         </p>
       </div>
       <div className="summary-section">
         <h2>Summary:</h2>
-        <p className="text-summary">
-          Elden Ring is a fantasy action RPG developed by FromSoftware and
-          Bandai Namco. Set in the Lands Between, players embark on an epic
-          quest to become the Elden Lord, exploring a vast open world designed
-          by Hidetaka Miyazaki, with worldbuilding contributed by fantasy author
-          George R. R. Martin. The game features challenging combat, deep lore,
-          and extensive character customization.
-        </p>
+        <p className="text-summary">{game.summary}</p>
       </div>
     </div>
     {/* Edit/Delete buttons ( Only for creator of this game )  */}

@@ -6,7 +6,8 @@ export default async function request(path = "/", method = "GET", data = null){
 
     const options = {
         headers: {
-            apiKey,
+            'apikey': apiKey,
+            'Authorization': `Bearer ${apiKey}`,
         }
     };
 
@@ -20,7 +21,7 @@ export default async function request(path = "/", method = "GET", data = null){
         
     }
 
-    const response = await fetch(`${url}/${path}`, options);
+    const response = await fetch(`${url}${path}`, options);
 
     if (!response){
         throw new Error(`Error: ${response.status}`)

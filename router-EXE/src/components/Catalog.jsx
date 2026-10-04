@@ -7,9 +7,9 @@ export default function Catalog() {
   const [games, setGames] = useState([])
 
   useEffect(() => {
-    request("/games?order=created_at.desc")
-      .then(setGames)
-      .catch(err => alert(err))
+    request("/games")
+      .then(data => { console.log('type: ', typeof data, 'value: ', data); setGames(data); })
+      .catch(err => console.log(err))
   },[])
 
 
