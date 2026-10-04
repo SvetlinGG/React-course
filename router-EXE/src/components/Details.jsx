@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import request from "../utils/request";
+
 export default function Details() {
+  const {gameId} = useParams;
+  const [game, setGame] = useState(null)
+
+  useEffect(() => {
+    request(`/games?id=eq.${gameId}`)
+      .then(result => {
+        console.log(result[0]);
+        
+      })
+  },[gameId])
+
+
     return (
         <section id="game-details">
   <h1>Game Details</h1>
@@ -6,13 +22,13 @@ export default function Details() {
     <div className="header-and-image">
       <img
         className="game-img"
-        src="images/elden ring.png"
-        alt="Elden Ring Cover Art"
+        src={gameId.imageUrl}
+        alt={game.title}
       />
       <div className="meta-info">
-        <h1 className="game-name">Elden Ring</h1>
+        <h1 className="game-name">{game.title}</h1>
         <p className="data-row">
-          <span className="label">Genre:</span>
+          <span className="label">{game.genre}</span>
           <span className="value">Action RPG</span>
         </p>
         <p className="data-row">

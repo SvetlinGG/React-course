@@ -21,13 +21,9 @@ function App() {
   
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
         <Route path="catalog" element={<Catalog />} />
         <Route path="create" element={<Create />} />
-        <Route path="edit" element={<Edit />} />
         <Route path="/games/:gameId" element={<Details />} />
-        <Route path="*" element={<Home />} />
       </Routes>
       
       <Footer />
