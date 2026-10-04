@@ -1,3 +1,4 @@
+import UncontrolledLogin from "./uncontrolled-login/UncontrolledLogin"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-     <h1>Work with Forms</h1>
+     <UncontrolledLogin />
     </>
   )
 }
