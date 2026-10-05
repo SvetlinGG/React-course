@@ -4,7 +4,7 @@ export default function ControlledLogin() {
   const [email, setEmail] = useState('Initial Value');
 
   const emailChangeHandler = (e) => {
-    console.log('Change');
+    console.log(e.target.value);
     
   }
 
