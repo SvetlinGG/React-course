@@ -13,7 +13,11 @@ export default function ControlledLogin() {
   }
 
   const submitHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    console.log(email);
+    console.log(password);
+    
   }
 
 
