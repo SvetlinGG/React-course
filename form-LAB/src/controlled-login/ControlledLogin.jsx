@@ -4,7 +4,7 @@ export default function ControlledLogin() {
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-sm bg-white p-8 rounded-xl shadow-md">
         <h1 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-          Sign in
+          Sign in Controlled
         </h1>
 
         <form  className="space-y-4">
