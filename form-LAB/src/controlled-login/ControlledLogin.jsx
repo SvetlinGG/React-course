@@ -3,12 +3,10 @@ export default function ControlledLogin() {
 
   const [email, setEmail] = useState('Initial Value');
 
-  console.log('set Svetlin');
-  
-
-  setTimeout(() => {
-    setEmail('svetlin@abv.bg')
-  }, 2000)
+  const emailChangeHandler = (e) => {
+    console.log('Change');
+    
+  }
 
 
     return (
@@ -28,7 +26,8 @@ export default function ControlledLogin() {
               id="email"
               type="email"
               name="email"
-              defaultValue="Svetlin"
+              value={email}
+              onChange={emailChangeHandler}
               placeholder="you@example.com"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               required
