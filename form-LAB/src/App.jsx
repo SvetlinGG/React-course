@@ -1,4 +1,7 @@
-import UncontrolledLogin from "./uncontrolled-login/UncontrolledLogin"
+import { Route } from 'react-router';
+import UncontrolledLogin from "./uncontrolled-login/UncontrolledLogin";
+import ControlledLogin from "./controlled-login/ControlledLogin";
+import Navbar from "./navbar/Navbar";
 
 
 function App() {
@@ -6,7 +9,12 @@ function App() {
 
   return (
     <>
-     <UncontrolledLogin />
+     <Navbar />
+
+     <Routes>
+        <Route path="/uncontrolled-form" element={<UncontrolledLogin />} />
+        <Route path='/controlled-form' element={<ControlledLogin />} />
+     </Routes>
     </>
   )
 }

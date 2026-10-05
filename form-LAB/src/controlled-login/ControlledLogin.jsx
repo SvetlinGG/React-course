@@ -7,7 +7,7 @@ export default function ControlledLogin() {
           Sign in
         </h1>
 
-        <form onSubmit={submitHandler} className="space-y-4">
+        <form  className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
               Email
