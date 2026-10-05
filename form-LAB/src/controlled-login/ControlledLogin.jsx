@@ -12,6 +12,10 @@ export default function ControlledLogin() {
     setPassword(e.target.value)
   }
 
+  const submitHandler = (e) => {
+    e.preventDefault()
+  }
+
 
     return (
         
@@ -21,7 +25,7 @@ export default function ControlledLogin() {
           Sign in Controlled
         </h1>
 
-        <form  className="space-y-4">
+        <form  className="space-y-4" onSubmit={submitHandler} >
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
               Email
