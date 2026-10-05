@@ -1,16 +1,6 @@
-export default function UncontrolledLogin() {
-
-    const submitHandler = (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(e.target);
-        console.log(formData.get('email'));
-        console.log(formData.get('password'));
-        
-    }
-
-
+export default function ControlledLogin() {
     return (
+        
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-sm bg-white p-8 rounded-xl shadow-md">
         <h1 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
