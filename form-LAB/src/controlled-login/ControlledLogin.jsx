@@ -1,11 +1,15 @@
 import { useState } from 'react'
 export default function ControlledLogin() {
 
-  const [email, setEmail] = useState('Initial Value');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const emailChangeHandler = (e) => {
-   
     setEmail(e.target.value)
+  }
+
+  const passwordChangeHandler = (e) => {
+    setPassword(e.target.value)
   }
 
 
@@ -42,6 +46,8 @@ export default function ControlledLogin() {
               id="password"
               type="password"
               name="password"
+              value={password}
+              onChange={passwordChangeHandler}
               placeholder="••••••••"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               required
