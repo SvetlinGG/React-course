@@ -11,15 +11,15 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-sm">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        <Link to='/' className="text-xl font-bold text-gray-900">
-          Brand
+        <Link to='/' className="text-xl font-bold text-gray-600">
+          My App
         </Link>
 
         <ul className="flex items-center gap-6">
           {links.map((link) => (
             <li key={link.href}>
               <Link
-                to={link.to}
+                to={link.href}
                 className="text-gray-600 hover:text-indigo-600 transition-colors"
               >
                 {link.label}
