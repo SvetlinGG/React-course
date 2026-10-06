@@ -5,7 +5,7 @@ const initialValue = {
     email: '',
     password: '',
     country: '',
-    gender: ''
+    gender: 'male'
 
 }
 
@@ -129,15 +129,15 @@ export default function UnifiedControlledForm() {
             <span className="block text-sm font-medium text-gray-700 mb-1">Interests</span>
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="programming" className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="programming" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Programming
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="design" className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="design" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Design
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="gaming" className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="gaming" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Gaming
               </label>
             </div>
