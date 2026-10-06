@@ -5,7 +5,7 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "UncontrolledForm", href: "/uncontrolled-form" },
     { label: "ControlledForm", href: "/controlled-form" },
-    { label: "Contact", href: "/contact" },
+    { label: "UnifiedControlledForm", href: "/unified-controlled-form" },
   ];
 
   return (
