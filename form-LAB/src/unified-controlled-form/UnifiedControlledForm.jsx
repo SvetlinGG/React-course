@@ -110,15 +110,15 @@ export default function UnifiedControlledForm() {
             <span className="block text-sm font-medium text-gray-700 mb-1">Gender</span>
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="radio" name="gender" value="male" onChange={changeHandler} className="text-indigo-600 focus:ring-indigo-500" />
+                <input type="radio" name="gender" value="male" onChange={changeHandler} checked={data.gender === 'male'} className="text-indigo-600 focus:ring-indigo-500" />
                 Male
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="radio" name="gender" value="female" onChange={changeHandler} className="text-indigo-600 focus:ring-indigo-500" />
+                <input type="radio" name="gender" value="female" onChange={changeHandler} checked={data.gender === 'female'} className="text-indigo-600 focus:ring-indigo-500" />
                 Female
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="radio" name="gender" value="other" onChange={changeHandler} className="text-indigo-600 focus:ring-indigo-500" />
+                <input type="radio" name="gender" value="other" onChange={changeHandler} checked={data.gender === 'other'} className="text-indigo-600 focus:ring-indigo-500" />
                 Other
               </label>
             </div>
