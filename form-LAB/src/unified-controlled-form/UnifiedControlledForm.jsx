@@ -1,8 +1,17 @@
 import { useState } from "react";
 
+const initialValue = {
+    name: '',
+
+    email: '',
+
+    password: ''
+
+}
+
 export default function UnifiedControlledForm() {
 
-    const [data, setData] = useState({});
+    const [data, setData] = useState(initialValue);
 
     const changeHandler = (e) => {
         setData((state) => ({
