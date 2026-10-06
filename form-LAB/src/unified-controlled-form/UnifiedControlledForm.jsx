@@ -31,6 +31,7 @@ export default function UnifiedControlledForm() {
               id="fullName"
               type="text"
               name="name"
+              value={data.name}
               onChange={changeHandler}
               placeholder="John Doe"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -47,6 +48,7 @@ export default function UnifiedControlledForm() {
               id="email"
               type="email"
               name="email"
+              value={data.email}
               onChange={changeHandler}
               placeholder="you@example.com"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -63,6 +65,7 @@ export default function UnifiedControlledForm() {
               id="password"
               type="password"
               name="password"
+              value={data.password}
               onChange={changeHandler}
               placeholder="••••••••"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
