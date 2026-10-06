@@ -14,10 +14,14 @@ export default function UnifiedControlledForm() {
     const [data, setData] = useState(initialValue);
 
     const changeHandler = (e) => {
-        setData((state) => ({
+       
+
+        
+             setData((state) => ({
             ...state,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
     }))
+        
         
 
     }
@@ -129,15 +133,15 @@ export default function UnifiedControlledForm() {
             <span className="block text-sm font-medium text-gray-700 mb-1">Interests</span>
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="programming" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="programming" name="programming" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Programming
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="design" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="design" name="design" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Design
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="gaming" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="gaming" name="gaming" onChange={changeHandler} className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Gaming
               </label>
             </div>
