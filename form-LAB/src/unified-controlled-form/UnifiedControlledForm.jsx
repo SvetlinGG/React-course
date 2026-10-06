@@ -4,7 +4,8 @@ const initialValue = {
     name: '',
     email: '',
     password: '',
-    country: ''
+    country: '',
+    gender: ''
 
 }
 
