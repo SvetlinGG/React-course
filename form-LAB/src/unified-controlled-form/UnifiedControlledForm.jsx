@@ -1,4 +1,15 @@
+import { useState } from "react";
+
 export default function UnifiedControlledForm() {
+
+    const [data, setData] = useState({});
+
+    const changeHandler = (e) => {
+        e.preventDefault()
+
+    }
+
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 py-10">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
@@ -15,6 +26,8 @@ export default function UnifiedControlledForm() {
             <input
               id="fullName"
               type="text"
+              name="name"
+              onChange={changeHandler}
               placeholder="John Doe"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               required
@@ -29,6 +42,8 @@ export default function UnifiedControlledForm() {
             <input
               id="email"
               type="email"
+              name="email"
+              onChange={changeHandler}
               placeholder="you@example.com"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               required
@@ -43,6 +58,8 @@ export default function UnifiedControlledForm() {
             <input
               id="password"
               type="password"
+              name="password"
+              onChange={changeHandler}
               placeholder="••••••••"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               required
