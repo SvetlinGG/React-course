@@ -5,7 +5,11 @@ export default function UnifiedControlledForm() {
     const [data, setData] = useState({});
 
     const changeHandler = (e) => {
-        e.preventDefault()
+        setData((state) => ({
+            ...state,
+            [e.target.name]: e.target.value
+    }))
+        
 
     }
 
