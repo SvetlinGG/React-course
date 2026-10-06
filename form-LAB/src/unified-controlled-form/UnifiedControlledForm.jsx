@@ -117,7 +117,7 @@ export default function UnifiedControlledForm() {
                 Female
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="radio" name="gender" value="other" className="text-indigo-600 focus:ring-indigo-500" />
+                <input type="radio" name="gender" value="other" onChange={changeHandler} className="text-indigo-600 focus:ring-indigo-500" />
                 Other
               </label>
             </div>
