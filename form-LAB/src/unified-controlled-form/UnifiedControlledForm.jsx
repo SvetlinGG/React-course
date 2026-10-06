@@ -2,10 +2,9 @@ import { useState } from "react";
 
 const initialValue = {
     name: '',
-
     email: '',
-
-    password: ''
+    password: '',
+    country: ''
 
 }
 
@@ -90,6 +89,9 @@ export default function UnifiedControlledForm() {
             <select
               id="country"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+              name="country"
+              onChange={changeHandler}
+              value={data.country}
               required
             >
               <option value="">Select your country</option>
@@ -107,7 +109,7 @@ export default function UnifiedControlledForm() {
             <span className="block text-sm font-medium text-gray-700 mb-1">Gender</span>
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="radio" name="gender" value="male" className="text-indigo-600 focus:ring-indigo-500" />
+                <input type="radio" name="gender" value="male" onChange={changeHandler} className="text-indigo-600 focus:ring-indigo-500" />
                 Male
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
