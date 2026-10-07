@@ -4,6 +4,7 @@ import ControlledLogin from "./controlled-login/ControlledLogin";
 import Navbar from "./navbar/Navbar";
 import UnifiedControlledForm from './unified-controlled-form/UnifiedControlledForm';
 import Ref from './ref/Ref';
+import Timer from './timer/Timer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/controlled-form' element={<ControlledLogin />} />
         <Route path="/unified-controlled-form" element={<UnifiedControlledForm />} />
         <Route path='/ref' element={<Ref />} />
+        <Route path="/timer" element={<Timer />} />
      </Routes>
     </>
   )

@@ -23,13 +23,6 @@ export default function Ref() {
         </form>
       
 
-      <button
-        
-        className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 active:bg-indigo-800 transition-colors shadow-sm"
-      >
-        Create
-      </button>
-
       <Submit formRef={formRef} />
         </>
     )

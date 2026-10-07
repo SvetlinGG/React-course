@@ -6,7 +6,9 @@ export default function Navbar() {
     { label: "UncontrolledForm", href: "/uncontrolled-form" },
     { label: "ControlledForm", href: "/controlled-form" },
     { label: "UnifiedControlledForm", href: "/unified-controlled-form" },
-    { label: "UseRef", href: "/ref" }
+    { label: "UseRef", href: "/ref" },
+    { label: "Timer", href: "/timer" },
+
   ];
 
   return (
