@@ -7,7 +7,7 @@ export default function Timer() {
         <h1 className="text-2xl font-semibold text-gray-900 mb-6">Timer</h1>
 
         <div className="text-5xl font-mono font-bold text-gray-800 mb-8 tabular-nums">
-          0
+          0 s
         </div>
 
         <div className="flex items-center justify-center gap-3">
