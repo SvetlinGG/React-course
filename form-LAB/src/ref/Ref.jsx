@@ -1,12 +1,16 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Ref() {
 
     const myRef = useRef();
 
     const focusHandler = () => {
-
+        myRef.current.focus();
     }
+
+    useEffect(() => {
+        myRef.current.focus()
+    },[])
 
 
     return (
