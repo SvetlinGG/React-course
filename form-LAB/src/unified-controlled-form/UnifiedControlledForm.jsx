@@ -9,6 +9,7 @@ const initialValue = {
     programming: false,
     design: false,
     gaming: false,
+    bio: ''
 
 }
 
@@ -140,11 +141,11 @@ export default function UnifiedControlledForm() {
                 Programming
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="design" name="design" onChange={changeHandler}  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="design" name="design" onChange={changeHandler} checked={data.design}  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Design
               </label>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" value="gaming" name="gaming" onChange={changeHandler}  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" value="gaming" name="gaming" onChange={changeHandler} checked={data.gaming}  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                 Gaming
               </label>
             </div>
@@ -158,6 +159,9 @@ export default function UnifiedControlledForm() {
             <textarea
               id="about"
               rows={4}
+              name="bio"
+              onChange={changeHandler}
+              value={data.bio}
               placeholder="Tell us a bit about yourself..."
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none"
             />
