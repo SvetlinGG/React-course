@@ -1,11 +1,14 @@
 
 
 export default function Ref() {
-    
+    const submitHandler = (e) => {
+        e.preventDefault()
+        console.log('submit');
+    }
 
     return (
         <>
-            <form>
+            <form onSubmit={submitHandler}>
             <input
                 type="text"
                 placeholder="type here"
@@ -21,6 +24,15 @@ export default function Ref() {
       >
         Focus
       </button>
+
+      <Submit />
         </>
+    )
+}
+
+function Submit(){
+
+    return (
+        <input type="submit" value="Create" />
     )
 }
