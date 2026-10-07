@@ -7,7 +7,7 @@ const initialValue = {
     country: '',
     gender: 'male',
     programming: false,
-    design: false,
+    design: true,
     gaming: false,
     bio: ''
 
