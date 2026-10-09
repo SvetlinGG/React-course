@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Timer() {
-
+  const intervalRef = useRef()
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
     setSeconds(seconds => seconds + 1);
   }, 1000)
 
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalRef.current);
   },[])
+
+  
 
   
 
