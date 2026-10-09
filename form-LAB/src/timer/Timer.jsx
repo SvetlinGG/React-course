@@ -2,11 +2,11 @@ import { useState } from "react";
 
 export default function Timer() {
 
-  const [seconds, setSeconds] = useState();
+  const [seconds, setSeconds] = useState(0);
 
-  setInterval(() => {
-
-  }, 1000)
+  // setInterval(() => {
+  //   setSeconds(seconds => seconds + 1);
+  // }, 1000)
 
 
     return (
