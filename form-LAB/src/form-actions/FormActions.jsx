@@ -6,8 +6,13 @@ export default function FormActions() {
         
         
             const submitHandler = (e) => {
+                // prevent page reload
                 e.preventDefault()
-                console.log('submit');
+                
+
+                const formData = new FormData(e.target);
+
+                const username = formData.get('username')
             }
         
             return (
@@ -15,14 +20,16 @@ export default function FormActions() {
                     <form onSubmit={submitHandler} >
                     <input
                         type="text"
+                        name="username"
                         placeholder="typing here"
                         className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         
                     />
+                    <Submit />
                 </form>
               
         
-              <Submit />
+              
                 </>
             )
         }
