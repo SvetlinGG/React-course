@@ -1,8 +1,8 @@
-import { useRef } from "react";
+
 
 export default function FormActions() {
     
-        const formRef = useRef()
+        
         
         
             const submitHandler = (e) => {
@@ -12,7 +12,7 @@ export default function FormActions() {
         
             return (
                 <>
-                    <form onSubmit={submitHandler} ref={formRef}>
+                    <form onSubmit={submitHandler} >
                     <input
                         type="text"
                         placeholder="typing here"
@@ -22,27 +22,21 @@ export default function FormActions() {
                 </form>
               
         
-              <Submit formRef={formRef} />
+              <Submit />
                 </>
             )
         }
         
-        function Submit({
-            formRef,
-        }){
+        function Submit(){
         
-            const clickHandler = () => {
-                
-                formRef.current.requestSubmit()
-            }
+            
         
             return (
                 <input 
-                    type="submit" 
-                    onClick={clickHandler}  
+                    type="submit"  
                     value="Create"
                     className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
                     />
-            )
+        )
        
 }
