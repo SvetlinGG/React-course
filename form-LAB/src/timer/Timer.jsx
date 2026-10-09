@@ -12,8 +12,18 @@ export default function Timer() {
     return () => clearInterval(intervalRef.current);
   },[])
 
+  const startHandler = () => {
+    intervalRef.current = setInterval(() => {
+      setSeconds(seconds => seconds + 1);
+    }, 1000)
+  }
+
   const stopHandler = () => {
     clearInterval(intervalRef.current)
+  }
+
+  const resetHandler = () => {
+    setSeconds(0);
   }
 
   
@@ -30,7 +40,7 @@ export default function Timer() {
 
         <div className="flex items-center justify-center gap-3">
           <button
-            
+            onClick={startHandler}
             className="px-5 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 active:bg-green-800 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
             Start
@@ -45,7 +55,7 @@ export default function Timer() {
           </button>
 
           <button
-            
+            onClick={resetHandler}
             className="px-5 py-2 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700 active:bg-gray-800 transition-colors"
           >
             Reset
