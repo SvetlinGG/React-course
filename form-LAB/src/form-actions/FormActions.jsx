@@ -9,10 +9,17 @@ export default function FormActions() {
                 // prevent page reload
                 e.preventDefault()
                 
-
+                // parse form data
                 const formData = new FormData(e.target);
+                // Get data from form
+                const username = formData.get('username');
 
-                const username = formData.get('username')
+                // do something
+                console.log(username);
+                // clenup form 
+                e.target.reset();
+
+                
             }
         
             return (
