@@ -8,7 +8,7 @@ export default function Navbar() {
     { label: "UnifiedControlledForm", href: "/unified-controlled-form" },
     { label: "UseRef", href: "/ref" },
     { label: "Timer", href: "/timer" },
-    
+    { label: "FormActions", href: "/form-actions" },
 
   ];
 
