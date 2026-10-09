@@ -12,7 +12,9 @@ export default function Timer() {
     return () => clearInterval(intervalRef.current);
   },[])
 
-  
+  const stopHandler = () => {
+    clearInterval(intervalRef.current)
+  }
 
   
 
@@ -35,7 +37,7 @@ export default function Timer() {
           </button>
 
           <button
-            onClick={stop}
+            onClick={stopHandler}
             
             className="px-5 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 active:bg-red-800 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
