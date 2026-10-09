@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 export default function Timer() {
+
+  const [seconds, setSeconds] = useState();
+
+  setInterval(() => {
+
+  }, 1000)
 
 
     return (
@@ -6,8 +14,8 @@ export default function Timer() {
       <div className="w-full max-w-sm bg-white p-8 rounded-xl shadow-md text-center">
         <h1 className="text-2xl font-semibold text-gray-900 mb-6">Timer</h1>
 
-        <div className="text-5xl font-mono font-bold text-gray-800 mb-8 tabular-nums">
-          0 s
+        <div className="text-2xl font-mono font-bold text-gray-800 mb-8 tabular-nums">
+          {seconds} s
         </div>
 
         <div className="flex items-center justify-center gap-3">
