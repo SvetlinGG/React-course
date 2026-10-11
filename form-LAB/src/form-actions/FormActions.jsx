@@ -1,3 +1,4 @@
+import { useFormStatus } from "react-dom";
 
 
 export default function FormActions() {
@@ -17,7 +18,7 @@ export default function FormActions() {
                 // do something
                 console.log(username);
                 // clenup form 
-                e.target.reset();
+                //e.target.reset();
 
                 
             }
@@ -43,7 +44,7 @@ export default function FormActions() {
         
         function Submit(){
         
-            
+            const {pending} = useFormStatus()
         
             return (
                 <input 
