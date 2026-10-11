@@ -5,12 +5,12 @@ export default function FormActions() {
         
         
         
-            const submitHandler = (e) => {
+            const submitHandler = (formData) => {
                 // prevent page reload
-                e.preventDefault()
+                //e.preventDefault()
                 
                 // parse form data
-                const formData = new FormData(e.target);
+                //const formData = new FormData(e.target);
                 // Get data from form
                 const username = formData.get('username');
 
@@ -24,7 +24,7 @@ export default function FormActions() {
         
             return (
                 <>
-                    <form onSubmit={submitHandler} >
+                    <form action={submitHandler} >
                     <input
                         type="text"
                         name="username"
