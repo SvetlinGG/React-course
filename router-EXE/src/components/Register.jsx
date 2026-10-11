@@ -4,15 +4,23 @@ export default function Register() {
     e.preventDefault();
     
     const formData = new FormData(e.target)
-    
+
+    // extract form data
     const user = {
       email: formData.get('email'),
       password: formData.get('password'),
       confirmPassword: formData.get('confirm-password')
     }
     console.log(user);
+
+    // basic validation
     if ( user.password !== user.confirmPassword){
       return alert('Password missmatch!')
+    }
+
+    if ( !user.email || !user.password || !user.confirmPassword){
+      return alert('All field are required!!!');
+      
     }
     
   }
