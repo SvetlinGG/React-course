@@ -1,5 +1,13 @@
 import { useFormStatus } from "react-dom";
 
+const wait = (time) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Wait is over');
+        }, time)
+    });
+}
+
 
 export default function FormActions() {
     
@@ -50,6 +58,7 @@ export default function FormActions() {
                 <input 
                     type="submit"  
                     value="Create"
+                    disabled={pending}
                     className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
                     />
         )
