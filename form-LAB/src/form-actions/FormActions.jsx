@@ -14,7 +14,7 @@ export default function FormActions() {
         
         
         
-            const submitHandler = (formData) => {
+            const submitHandler = async (formData) => {
                 // prevent page reload
                 //e.preventDefault()
                 
@@ -28,7 +28,7 @@ export default function FormActions() {
                 // clenup form 
                 //e.target.reset();
 
-                
+                await wait(3000);
             }
         
             return (
