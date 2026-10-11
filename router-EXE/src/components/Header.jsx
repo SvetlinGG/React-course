@@ -13,7 +13,7 @@ export default function Header() {
     {/* Logged-in users */}
     <div id="user">
       <Link to="/create">Add Game</Link>
-      <Link to="/login">Logout</Link>
+      <Link to="/logout">Logout</Link>
     </div>
     {/* Guest users */}
     <div id="guest">

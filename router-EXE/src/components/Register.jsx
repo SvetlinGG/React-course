@@ -1,7 +1,26 @@
 export default function Register() {
+
+  const registerHandler = (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target)
+    
+    const user = {
+      email: formData.get('email'),
+      password: formData.get('password'),
+      confirmPassword: formData.get('confirm-password')
+    }
+    console.log(user);
+    if ( user.password !== user.confirmPassword){
+      return alert('Password missmatch!')
+    }
+    
+  }
+
+
     return (
         <section id="register-page" className="content auth">
-  <form id="register">
+  <form id="register" onSubmit={registerHandler}>
     <div className="container">
       <div className="brand-logo" />
       <h1>Register</h1>
