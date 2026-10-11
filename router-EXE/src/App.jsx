@@ -4,6 +4,7 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./components/Home";
 import Details from "./components/Details";
+import Register from "./components/Register";
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="catalog" element={<Catalog />} />
         <Route path="/games/:gameId" element={<Details />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       
       <Footer />
