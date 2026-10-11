@@ -5,6 +5,7 @@ import Header from "./components/Header"
 import Home from "./components/Home";
 import Details from "./components/Details";
 import Register from "./components/Register";
+import Login from "./components/Login";
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="catalog" element={<Catalog />} />
         <Route path="/games/:gameId" element={<Details />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       
       <Footer />
