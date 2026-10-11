@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router';
 export default function Register() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   const registerHandler = (e) => {
     e.preventDefault();
@@ -23,9 +25,13 @@ export default function Register() {
 
     if ( !email || !password || !confirmPassword){
       return alert('All field are required!!!');
-      
     }
+
+    
     setUser({email})
+
+    // navigate to home page
+    navigate('/')
   }
 
 
