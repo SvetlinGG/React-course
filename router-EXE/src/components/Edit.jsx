@@ -25,12 +25,23 @@ export default function Edit() {
   useEffect(() => {
     request(`/games?id=eq.${gameId}`)
     .then(data => setGame(data[0]))
-  },[gameId])
+  },[gameId]);
+
+  const editAction = async () => {
+
+    const result = await request(`/games?id=eq.${gameId}`, 'PUT', game)
+    .then(() => {
+      alert('Edited!');
+    })
+
+    console.log(result);
+    
+  }
 
 
     return (
         <section id="edit-page">
-  <form id="add-new-game">
+  <form id="add-new-game" action={editAction}>
     <div className="container">
       <h1>Edit Game</h1>
       <div className="form-group-half">
