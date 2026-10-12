@@ -1,12 +1,12 @@
 //import { useState } from 'react'
-//import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 export default function Register({
   user,
-  setUser
+  onRegister
 }) {
 
   
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const registerHandler = (formData) => {
     
@@ -31,10 +31,10 @@ export default function Register({
     }
 
     
-    setUser({email})
+    onRegister({email})
 
     // navigate to home page
-    //navigate('/')
+    navigate('/')
   }
 
 

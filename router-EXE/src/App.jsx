@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header user={user} />
   
       <Routes>
         <Route path="/" element={<Home />} />
