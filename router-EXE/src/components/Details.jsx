@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import request from "../utils/request";
+import { Link } from "react-router";
 
 export default function Details() {
   const {gameId} = useParams();
@@ -63,9 +64,9 @@ export default function Details() {
     </div>
     {/* Edit/Delete buttons ( Only for creator of this game )  */}
     <div className="buttons">
-      <a href="#" className="button">
+      <Link to={`/games/${gameId}/edit`} className="button">
         Edit
-      </a>
+      </Link>
       <a href="#" className="button" onClick={deleteGameHandler}>
         Delete
       </a>
