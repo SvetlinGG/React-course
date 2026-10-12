@@ -1,4 +1,25 @@
+import { useState } from "react";
+
+const initialValues = {
+  title: '',
+  genre: '',
+  activePlayers: 0,
+  releaseDate: '',
+  imageUrl: '',
+  summary: ''
+}
+
 export default function Create() {
+  const [ values, setValues] = useState(initialValues);
+
+  const changeHandler = (e) => {
+    setValues(state => ({
+      ...state,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+
     return (
         <section id="add-page">
   <form id="add-new-game">
@@ -9,7 +30,9 @@ export default function Create() {
         <input
           type="text"
           id="gameName"
-          name="gameName"
+          name="title"
+          value={values.title}
+          onChange={changeHandler}
           placeholder="Enter game title..."
         />
       </div>
@@ -19,6 +42,8 @@ export default function Create() {
           type="text"
           id="genre"
           name="genre"
+          value={values.genre}
+          onChange={changeHandler}
           placeholder="Enter game genre..."
         />
       </div>
@@ -28,13 +53,15 @@ export default function Create() {
           type="number"
           id="activePlayers"
           name="activePlayers"
+          value={values.activePlayers}
+          onChange={changeHandler}
           min={0}
           placeholder={0}
         />
       </div>
       <div className="form-group-half">
         <label htmlFor="releaseDate">Release Date:</label>
-        <input type="date" id="releaseDate" name="releaseDate" />
+        <input type="date" id="releaseDate" name="releaseDate" value={values.releaseDate} onChange={changeHandler} />
       </div>
       <div className="form-group-full">
         <label htmlFor="imageUrl">Image URL:</label>
@@ -42,6 +69,8 @@ export default function Create() {
           type="text"
           id="imageUrl"
           name="imageUrl"
+          value={values.imageUrl}
+          onChange={changeHandler}
           placeholder="Enter image URL..."
         />
       </div>
@@ -50,6 +79,8 @@ export default function Create() {
         <textarea
           name="summary"
           id="summary"
+          value={values.summary}
+          onChange={changeHandler}
           rows={5}
           placeholder="Write a brief summary..."
           defaultValue={""}
