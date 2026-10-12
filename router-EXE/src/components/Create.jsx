@@ -20,11 +20,12 @@ export default function Create() {
     }))
   }
 
-  const submitAction = () => {
-    request('/games', 'POST', {
+  const submitAction = async () => {
+    const result = await request('/games', 'POST', {
       ...values,
       activePlayers: Number(values.activePlayers)
     })
+    console.log(result);
     
   }
 
