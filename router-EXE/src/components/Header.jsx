@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 
 export default function Header({
-  user,
+  isAuthenticated,
 }) {
     return (
         <header>
@@ -14,13 +14,12 @@ export default function Header({
     <Link to="/catalog">Catalog</Link>
     {/* Logged-in users */}
 
-    { user 
+    { isAuthenticated 
       ? (
       <div id="user">
         <Link to="/create">Add Game</Link>
         <Link to="/logout">Logout</Link>
-      </div>,
-      <p>Welcome {user.email}!!!</p>
+      </div>
     )
     : (
       <div id="guest">
