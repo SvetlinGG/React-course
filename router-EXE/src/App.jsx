@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router'
+
 import { Route, Routes } from "react-router"
 import Catalog from "./components/Catalog"
 import Footer from "./components/Footer"
@@ -9,10 +10,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Create from "./components/Create";
 import { useState } from "react";
-
-
-
-
+import Logout from './components/Logout'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,7 +24,7 @@ function App() {
   }
 
   const logoutHandler = () => {
-    setUser(null);
+    setUser(null)
     navigate('/');
   }
 
@@ -42,7 +40,7 @@ function App() {
         <Route path="/games/:gameId" element={<Details />} />
         <Route path="/register" element={<Register onRegister={userAuthHandler} user={user} />} />
         <Route path="/login" element={<Login onLogin={userAuthHandler} user={user} />} />
-        <Route path="/logout" action={logoutHandler} />
+        <Route path="/logout" element={<Logout onLogout={logoutHandler} />} />
         <Route path="/create" element={<Create />} />
       </Routes>
       
