@@ -19,7 +19,8 @@ export default function Header({
       <div id="user">
         <Link to="/create">Add Game</Link>
         <Link to="/logout">Logout</Link>
-      </div>
+      </div>,
+      <p>Welcome {user.email}!!!</p>
     )
     : (
       <div id="guest">
