@@ -1,8 +1,11 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 //import { useNavigate } from 'react-router';
-export default function Register() {
+export default function Register({
+  user,
+  setUser
+}) {
 
-  const [user, setUser] = useState(null);
+  
   //const navigate = useNavigate();
 
   const registerHandler = (formData) => {

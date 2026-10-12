@@ -7,13 +7,21 @@ import Details from "./components/Details";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Create from "./components/Create";
+import { useState } from "react";
 
 
 
 
 
 function App() {
-  
+  const [user, setUser] = useState(null);
+
+  const userAuthHandler = (userData) => {
+
+    console.log('User Authenticated:', userData);
+    
+    setUser(userData)
+  }
 
   return (
     <>
@@ -23,7 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="catalog" element={<Catalog />} />
         <Route path="/games/:gameId" element={<Details />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register onRegister={userAuthHandler} user={user} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create" element={<Create />} />
       </Routes>
