@@ -10,7 +10,8 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Create from "./components/Create";
 import { useState } from "react";
-import Logout from './components/Logout'
+import Logout from './components/Logout';
+import Edit from './components/Edit';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -42,6 +43,7 @@ function App() {
         <Route path="/login" element={<Login onLogin={userAuthHandler} user={user} />} />
         <Route path="/logout" element={<Logout onLogout={logoutHandler} />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/edit/:gameId" element={<Edit />} />
       </Routes>
       
       <Footer />

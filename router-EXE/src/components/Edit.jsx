@@ -9,7 +9,7 @@ export default function Edit() {
         <input
           type="text"
           id="gameName"
-          name="gameName"
+          name="title"
           placeholder="Enter game title..."
         />
       </div>
