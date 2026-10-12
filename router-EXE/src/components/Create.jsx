@@ -1,9 +1,10 @@
 import { useState } from "react";
+import request from "../utils/request";
 
 const initialValues = {
   title: '',
   genre: '',
-  activePlayers: 0,
+  activePlayers: '',
   releaseDate: '',
   imageUrl: '',
   summary: ''
@@ -19,10 +20,18 @@ export default function Create() {
     }))
   }
 
+  const submitAction = () => {
+    request('/games', 'POST', {
+      ...values,
+      activePlayers: Number(values.activePlayers)
+    })
+    
+  }
+
 
     return (
         <section id="add-page">
-  <form id="add-new-game">
+  <form id="add-new-game" action={submitAction}>
     <div className="container">
       <h1>Add New Game</h1>
       <div className="form-group-half">
