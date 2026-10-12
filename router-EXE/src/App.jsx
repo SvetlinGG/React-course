@@ -43,7 +43,7 @@ function App() {
         <Route path="/login" element={<Login onLogin={userAuthHandler} user={user} />} />
         <Route path="/logout" element={<Logout onLogout={logoutHandler} />} />
         <Route path="/create" element={<Create />} />
-        <Route path="/edit/:gameId" element={<Edit />} />
+        <Route path="/games/:gameId/edit" element={<Edit />} />
       </Routes>
       
       <Footer />

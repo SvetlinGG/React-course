@@ -1,4 +1,33 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import request from "../utils/request";
+
+const initialValues = {
+  title: '',
+  genre: '',
+  activePlayers: '',
+  releaseDate: '',
+  imageUrl: '',
+  summary: ''
+}
+
 export default function Edit() {
+  const {gameId} = useParams();
+  const [game, setGame] = useState(initialValues);
+
+  const changeHandler = (e) => {
+    setGame(state => ({
+      ...state,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  useEffect(() => {
+    request(`/games?id=eq.${gameId}`)
+    .then(data => setGame(data[0]))
+  },[gameId])
+
+
     return (
         <section id="edit-page">
   <form id="add-new-game">
@@ -10,6 +39,8 @@ export default function Edit() {
           type="text"
           id="gameName"
           name="title"
+          value={game.title}
+          onChange={changeHandler}
           placeholder="Enter game title..."
         />
       </div>
@@ -19,6 +50,8 @@ export default function Edit() {
           type="text"
           id="genre"
           name="genre"
+          value={game.genre}
+          onChange={changeHandler}
           placeholder="Enter game genre..."
         />
       </div>
@@ -28,13 +61,15 @@ export default function Edit() {
           type="number"
           id="activePlayers"
           name="activePlayers"
+          value={game.activePlayers}
+          onChange={changeHandler}
           min={0}
           placeholder={0}
         />
       </div>
       <div className="form-group-half">
         <label htmlFor="releaseDate">Release Date:</label>
-        <input type="date" id="releaseDate" name="releaseDate" />
+        <input type="date" id="releaseDate" name="releaseDate" value={game.releaseDate} onChange={changeHandler} />
       </div>
       <div className="form-group-full">
         <label htmlFor="imageUrl">Image URL:</label>
@@ -42,6 +77,8 @@ export default function Edit() {
           type="text"
           id="imageUrl"
           name="imageUrl"
+          value={game.imageUrl}
+          onChange={changeHandler}
           placeholder="Enter image URL..."
         />
       </div>
@@ -50,6 +87,8 @@ export default function Edit() {
         <textarea
           name="summary"
           id="summary"
+          value={game.summary}
+          onChange={changeHandler}
           rows={5}
           placeholder="Write a brief summary..."
           defaultValue={""}
