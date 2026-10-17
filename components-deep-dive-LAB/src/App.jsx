@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Timer from './components/Timer'
+import Counter from './components/Counter'
 
 function App() {
   
@@ -8,6 +9,8 @@ function App() {
   return (
     <>
       <Timer />
+
+      <Counter />
     </>
   )
 }
