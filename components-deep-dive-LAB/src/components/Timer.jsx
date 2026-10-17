@@ -1,10 +1,14 @@
+import { useState } from "react";
+
 export default function Timer() {
 
-    let seconds = 0;
+    
+
+    const [timer, setTimer] = useState(0)
 
     setTimeout(() => {
-        seconds ++;
-        console.log(seconds);
+        setTimer(seconds => seconds + 1)
+        console.log(timer);
         
     },1000)
 
@@ -12,7 +16,7 @@ export default function Timer() {
     return (
         <>
         <h1>Timer</h1>
-        <p>{seconds} seconds</p>
+        <p>{timer} seconds</p>
         </>
     );
 }
