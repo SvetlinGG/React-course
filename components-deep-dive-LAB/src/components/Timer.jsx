@@ -6,11 +6,11 @@ export default function Timer() {
 
     const [timer, setTimer] = useState(0)
 
-    setTimeout(() => {
-        setTimer(seconds => seconds + 1)
-        console.log(timer);
+    // setTimeout(() => {
+    //     setTimer(seconds => seconds + 1)
+    //     console.log(timer);
         
-    },1000)
+    // },1000)
 
 
     return (
