@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import Timer from './components/Timer'
 
 function App() {
   
 
   return (
     <>
-      <h1>Welcome to React Components</h1>
+      <Timer />
     </>
   )
 }
