@@ -13,7 +13,7 @@ export default function Counter() {
 
         <>
         <h3>Counter {count}</h3>
-        <button>Count</button>
+        <button onClick={counterHandler}>Count</button>
         </>
     );
 }
