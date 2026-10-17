@@ -8,12 +8,17 @@ export default function Counter() {
         setCount(count + 1);
     }
 
+    const resetHandler =  () => {
+        setCount(0);
+
+    }
 
     return (
 
         <>
         <h3>Counter {count}</h3>
         <button onClick={counterHandler}>Count</button>
+        <button onClick={resetHandler}>Reset</button>
         </>
     );
 }
