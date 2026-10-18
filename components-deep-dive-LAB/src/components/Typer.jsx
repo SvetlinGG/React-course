@@ -3,18 +3,18 @@ export default function Typer() {
     const [key, setKey] = useState('')
 
     useEffect(() => {
-        console.log('pressed key');
+        window.addEventListener('keypress', (e) => {
+        setKey(e.key)
+        
+    } )
         
     },[])
 
-    const keyDownHandler = (e) => {
-        setKey(e.key)
-        
-    }
+    
 
 
     return (
-        <section tabIndex={0} onKeyDown={keyDownHandler}>
+        <section >
             <h2>Typer</h2>
 
             <p>Pressed Key</p>
@@ -22,3 +22,5 @@ export default function Typer() {
         </section>
     );
 }
+
+
