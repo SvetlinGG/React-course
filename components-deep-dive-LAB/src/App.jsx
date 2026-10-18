@@ -4,6 +4,7 @@ import Timer from './components/Timer'
 import Counter from './components/Counter'
 import Calendar from './components/Calendar'
 import Typer from './components/Typer'
+import Swapi from './components/Swapi'
 
 function App() {
   
@@ -17,6 +18,8 @@ function App() {
       <Calendar />
 
       <Typer />
+
+      <Swapi />
     </>
   )
 }
