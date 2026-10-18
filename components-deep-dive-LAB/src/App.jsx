@@ -3,6 +3,7 @@ import './App.css'
 import Timer from './components/Timer'
 import Counter from './components/Counter'
 import Calendar from './components/Calendar'
+import Typer from './components/Typer'
 
 function App() {
   
@@ -14,6 +15,8 @@ function App() {
       <Counter />
 
       <Calendar />
+
+      <Typer />
     </>
   )
 }
