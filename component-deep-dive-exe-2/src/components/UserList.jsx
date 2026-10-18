@@ -112,8 +112,8 @@ export default function UserList() {
           </tbody>
         </table>
 
-        <UserDetails />
-        <UserDeleteModal />
+        {/* <UserDetails />
+        <UserDeleteModal /> */}
       </div>
     );
 }

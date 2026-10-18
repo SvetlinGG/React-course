@@ -22,7 +22,7 @@ function App() {
       {/* New user button  */}
         <button className="btn-add btn" >Add new user</button>
 
-      <SaveUserModal />
+      {/* <SaveUserModal /> */}
       {/* Pagination component  */}
       <Pagination />
     </section>
