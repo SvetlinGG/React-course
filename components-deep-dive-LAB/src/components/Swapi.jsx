@@ -7,8 +7,8 @@ export default function Swapi() {
     useEffect(() => {
         fetch("https://swapi.dev/api/people")
         .then(response => response.json())
-        .then(data => console.log(data.results))
-    })
+        .then(data => setCharacters(data.results))
+    },[])
 
 
     return (
@@ -16,9 +16,7 @@ export default function Swapi() {
             <h2>SW Characters</h2>
 
             <ul>
-                <li>
-                    {name[0]}
-                </li>
+                {characters.map(character => <li key={character}>{character.name}</li>)}
             </ul>
         </section>
     );
