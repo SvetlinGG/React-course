@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Timer from './components/Timer'
 import Counter from './components/Counter'
+import Calendar from './components/Calendar'
 
 function App() {
   
@@ -11,6 +12,8 @@ function App() {
       <Timer />
 
       <Counter />
+
+      <Calendar />
     </>
   )
 }
