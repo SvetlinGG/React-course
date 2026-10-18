@@ -3,8 +3,8 @@ export default function UserListItem() {
           <tr>
               <td>
                 <img
-                  src=''
-                  alt=''
+                  src='/m'
+                  alt='m'
                   className="image"
                 />
               </td>
