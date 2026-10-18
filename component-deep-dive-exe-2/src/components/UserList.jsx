@@ -1,7 +1,12 @@
+import UserDeleteModal from "./UserDeleteModal";
+import UserDetails from "./UserDetails";
+import UserListItem from "./UserListItem";
+import Spinner from "./Spinner"
+
 export default function UserList() {
     return (
           <div className="table-wrapper">
-        {/* <Spinner /> */}
+        <Spinner /> 
         <table className="table">
           <thead>
             <tr>
@@ -101,19 +106,14 @@ export default function UserList() {
           </thead>
           <tbody>
             {/* Table row component */}
-            {users.map(user => (
-              <UserListItem 
-              key={user.id} 
-              onInfo={showUserDetailHandler}
-              onDelete={showUserDeleteHandler}
-              {...user} 
-              />
-            ))}
+            
+              <UserListItem />
+            
           </tbody>
         </table>
 
-        {showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
-        {showUserDelete && <DeleteUser onClose={hideModalHandler}  onDelete={deleteUserHandler} />}
+        <UserDetails />
+        <UserDeleteModal />
       </div>
     );
 }
