@@ -1,19 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 export default function Typer() {
-    const [key, setKey] = useState(null)
+    const [key, setKey] = useState('')
 
-    const keyDownHandler = () => {
+    useEffect(() => {
         console.log('pressed key');
+        
+    },[])
+
+    const keyDownHandler = (e) => {
+        setKey(e.key)
         
     }
 
 
     return (
-        <section onKeyDown={keyDownHandler}>
+        <section tabIndex={0} onKeyDown={keyDownHandler}>
             <h2>Typer</h2>
 
             <p>Pressed Key</p>
-            <strong>A</strong>
+            <strong>{key}</strong>
         </section>
     );
 }
