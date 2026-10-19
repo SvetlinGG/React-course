@@ -17,8 +17,12 @@ function App() {
   const [users, setUsers] = useState([]);
   const [showSaveUserModal, setShowSaveUserModal] = useState(false);
 
-  const userModalHandler = () => {
+  const openModalHandler = () => {
     setShowSaveUserModal(true)
+  }
+
+  const closeModalHandler = () => {
+    setShowSaveUserModal(false)
   }
   
   
@@ -44,8 +48,8 @@ function App() {
       {/* Table component */}
       <UserList users={users} />
       {/* New user button  */}
-        <button className="btn-add btn" onClick={userModalHandler}>Add new user</button>
-      {showSaveUserModal && <SaveUserModal />}
+        <button className="btn-add btn" onClick={openModalHandler}>Add new user</button>
+      {showSaveUserModal && <SaveUserModal onClose={closeModalHandler} />}
       
       {/* Pagination component  */}
       <Pagination />
