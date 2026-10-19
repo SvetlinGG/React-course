@@ -5,15 +5,18 @@ const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
 export default function UserDetails({
-  userId
+  userId,
+  onClose
 }) {
 
   const [user, setUser] = useState({});
 
   useEffect(() => {
+    
+
     fetch(`${baseURL}?id=eq.${userId}`, {
       headers: {
-        apiKey: apiKey
+        apiKey: apiKey,
       },
     })
     .then(res => res.json())
@@ -21,10 +24,9 @@ export default function UserDetails({
     .catch(err => console.error('Error fetching user: ', err))
   },[userId])
 
-  const closeHandler = () => setUser(null);
+  const closeHandler = () => onClose();
 
   if (!user) return null;
-
 
     return (
              <div className="overlay">

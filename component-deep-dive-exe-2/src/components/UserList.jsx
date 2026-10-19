@@ -16,7 +16,12 @@ export default function UserList({
 
   const userDetailsHandler = (userId) => {
     setShowUserDetails(true);
-    setSelectedUserId(userId)
+    setSelectedUserId(userId);
+  }
+
+  const closeDetailsHandler = () => {
+    setShowUserDetails(false);
+    setSelectedUserId(null);
   }
 
 
@@ -128,7 +133,7 @@ export default function UserList({
           </tbody>
         </table>
 
-        { showUserDetails && <UserDetails userId={selectedUserId} />}
+        { showUserDetails && <UserDetails userId={selectedUserId} onClose={closeDetailsHandler} />}
         {/* <UserDeleteModal /> */}
       </div>
     );
