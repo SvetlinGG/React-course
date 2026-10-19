@@ -20,10 +20,10 @@ export default function UserList({
     setSelectedUserId(userId);
   }
 
-  // const closeDetailsHandler = () => {
-  //   setShowUserDetails(false);
-  //   setSelectedUserId(null);
-  // }
+  const showUserDeleteHandler = (userId) => {
+    setSelectedUserId(userId);
+    setShowUserDelete(true);
+  }
 
   const hideModalHandler = (userId) => {
     setShowUserDetails(false);
@@ -135,7 +135,7 @@ export default function UserList({
           <tbody>
             {/* Table row component */}
             
-              {users.map(user => <UserListItem key={user.id} {...user} onInfo={userDetailsHandler} />)}
+              {users.map(user => <UserListItem key={user.id} {...user} onInfo={userDetailsHandler} onDelete={showUserDeleteHandler} />)}
             
           </tbody>
         </table>
