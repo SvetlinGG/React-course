@@ -1,18 +1,29 @@
-export default function UserListItem() {
+export default function UserListItem({
+  id,
+  firstName,
+  lastName,
+  email,
+  phoneNumber,
+  imageUrl,
+  createdAt,
+  address
+}) {
+
+
     return (
           <tr>
               <td>
                 <img
-                  src='imageUrl'
-                  alt='m'
+                  src={imageUrl}
+                  alt={firstName}
                   className="image"
                 />
               </td>
-              <td>Peter</td>
-              <td>Petrov</td>
-              <td>petrov@gmail.com</td>
-              <td>+359 892 488895</td>
-              <td>14.10.1972</td>
+              <td>{firstName}</td>
+              <td>{lastName}</td>
+              <td>{email}</td>
+              <td>{phoneNumber}</td>
+              <td>{createdAt}</td>
               <td className="actions">
                 <button className="btn edit-btn" title="Edit">
                   <svg
