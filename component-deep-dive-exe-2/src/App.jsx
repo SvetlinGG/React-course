@@ -49,7 +49,7 @@ function App() {
       <UserList users={users} />
       {/* New user button  */}
         <button className="btn-add btn" onClick={openModalHandler}>Add new user</button>
-      {showSaveUserModal && <SaveUserModal onClose={closeModalHandler} />}
+      {showSaveUserModal && <SaveUserModal onClose={closeModalHandler} onSubmit={submitHandler} />}
       
       {/* Pagination component  */}
       <Pagination />
