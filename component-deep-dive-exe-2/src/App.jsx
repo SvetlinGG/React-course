@@ -8,17 +8,25 @@ import SaveUserModal from "./components/SaveUserModal";
 import UserDeleteModal from "./components/UserDeleteModal";
 import Pagination from "./components/Pagination";
 
+const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
+
 
 function App() {
 
   const [users, setUsers] = useState([]);
-  console.log(users);
+  const [showSaveUserModal, setShowSaveUserModal] = useState(false);
+
+  const userModalHandler = () => {
+    setShowSaveUserModal(true)
+  }
+  
   
 
   useEffect(() => {
-    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
+    fetch( baseURL, {
       headers: {
-        'apiKey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+        'apiKey': apiKey
       }
     })
     .then(res => res.json())
@@ -36,9 +44,9 @@ function App() {
       {/* Table component */}
       <UserList users={users} />
       {/* New user button  */}
-        <button className="btn-add btn" >Add new user</button>
-
-      {/* <SaveUserModal /> */}
+        <button className="btn-add btn" onClick={userModalHandler}>Add new user</button>
+      {showSaveUserModal && <SaveUserModal />}
+      
       {/* Pagination component  */}
       <Pagination />
     </section>

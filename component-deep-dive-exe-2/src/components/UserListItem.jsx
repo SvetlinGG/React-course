@@ -1,3 +1,5 @@
+import { fromIsoDate } from "../utils/dateTimeUtils";
+
 export default function UserListItem({
   id,
   firstName,
@@ -15,7 +17,7 @@ export default function UserListItem({
               <td>
                 <img
                   src={imageUrl}
-                  alt={firstName}
+                  alt={`${firstName}'s profile`}
                   className="image"
                 />
               </td>
@@ -23,7 +25,7 @@ export default function UserListItem({
               <td>{lastName}</td>
               <td>{email}</td>
               <td>{phoneNumber}</td>
-              <td>{createdAt}</td>
+              <td>{fromIsoDate(createdAt)}</td>
               <td className="actions">
                 <button className="btn edit-btn" title="Edit">
                   <svg
