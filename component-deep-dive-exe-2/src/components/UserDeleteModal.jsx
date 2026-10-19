@@ -1,6 +1,6 @@
 export default function UserDeleteModal({
-  userId,
-  onClose
+  onClose,
+  onDelete
 }) {
     return (
         <div className="overlay">
@@ -29,7 +29,7 @@ export default function UserDeleteModal({
       </header>
       <div className="actions">
         <div id="form-actions">
-          <button id="action-save" className="btn" type="submit">
+          <button id="action-save" className="btn" type="button" onClick={onDelete}>
             Delete
           </button>
           <button id="action-cancel" className="btn" type="button" onClick={onClose}>

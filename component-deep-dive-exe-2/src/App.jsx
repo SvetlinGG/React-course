@@ -7,6 +7,7 @@ import UserSearch from "./components/UserSearch";
 import SaveUserModal from "./components/SaveUserModal";
 import UserDeleteModal from "./components/UserDeleteModal";
 import Pagination from "./components/Pagination";
+import { fetchUsers } from './api/usersApi';
 
 const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
@@ -64,7 +65,7 @@ function App() {
           <section className="card users-container">
       <UserSearch />
       {/* Table component */}
-      <UserList users={users} />
+      <UserList users={users} onUserUpdate={() => fetchUsers().then(data => setUsers(data))} />
       {/* New user button  */}
         <button className="btn-add btn" onClick={openModalHandler}>Add new user</button>
       {showSaveUserModal && <SaveUserModal onClose={closeModalHandler} onSubmit={submitUserHandler} />}
@@ -84,15 +85,6 @@ function App() {
   )
 }
 
-async function fetchUsers(){
-    const response = await fetch( baseURL, {
-      headers: {
-        'apiKey': apiKey
-      }
-    });
 
-    const data = await response.json() ;
-    return data;
-  }
 
 export default App

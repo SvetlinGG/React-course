@@ -8,12 +8,13 @@ const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
 export default function UserList({
-  users
+  users,
+  onUserUpdate
 }) {
 
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState(null);
-  const [showUserDelete, setShowUserDelete] = useState(true);
+  const [showUserDelete, setShowUserDelete] = useState(false);
 
   const userDetailsHandler = (userId) => {
     setShowUserDetails(true);
@@ -30,6 +31,23 @@ export default function UserList({
     setSelectedUserId(null)
     setShowUserDelete(false)
   }
+
+  const deleteUserHandler = async () => {
+        try {
+            await fetch(`${baseURL}?id=eq.${selectedUserId}`, {
+                method: 'DELETE',
+                headers: {
+                    'apiKey': apiKey,
+                }
+            });
+
+            onUserUpdate();
+        } catch (error) {
+            console.error('Failed to delete user:', error);
+        } finally {
+            hideModalHandler();
+        }
+    }
 
 
     return (
@@ -141,7 +159,7 @@ export default function UserList({
         </table>
 
         { showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
-        { showUserDelete && <UserDeleteModal  onClose={hideModalHandler} />}
+        { showUserDelete && <UserDeleteModal  onClose={hideModalHandler} onDelete={deleteUserHandler} />}
         {/* <UserDeleteModal /> */}
       </div>
     );
