@@ -1,12 +1,39 @@
-export default function UserDetails() {
+import { useEffect, useState } from "react";
+import { fromIsoDate } from "../utils/dateTimeUtils";
+
+const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
+
+export default function UserDetails({
+  userId
+}) {
+
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    fetch(`${baseURL}?id=eq.${userId}`, {
+      headers: {
+        apiKey: apiKey
+      },
+    })
+    .then(res => res.json())
+    .then(data => setUser(data[0]))
+    .catch(err => console.error('Error fetching user: ', err))
+  },[userId])
+
+  const closeHandler = () => setUser(null);
+
+  if (!user) return null;
+
+
     return (
              <div className="overlay">
-<div className="backdrop"></div>
+<div className="backdrop" onClick={closeHandler}></div>
 <div className="modal">
   <div className="detail-container">
     <header className="headers">
       <h2>User Detail</h2>
-      <button className="btn close" >
+      <button className="btn close"  onClick={closeHandler}>
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark"
           className="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
           <path fill="currentColor"
@@ -17,24 +44,24 @@ export default function UserDetails() {
     </header>
     <div className="content">
       <div className="image-container">
-        <img src='/m' alt='m'
+        <img src={user.imageUrl} alt={user.firstName}
           className="image" />
       </div>
       <div className="user-details">
-        <p>User Id: <strong>1</strong></p>
+        <p>User Id: <strong>{user.id}</strong></p>
         <p>
           Full Name:
-          <strong>Peter Petrov</strong>
+          <strong>{user.firstName} {user.lastName}</strong>
         </p>
-        <p>Email: <strong>petrov@gmail.com</strong></p>
-        <p>Phone Number: <strong>+359 892 488895</strong></p>
+        <p>Email: <strong>{user.email}</strong></p>
+        <p>Phone Number: <strong>{user.phoneNumber}</strong></p>
         <p>
           Address:
-          <strong>Bulgaria, Plovdiv</strong>
+          <strong>{user.address?.country}, {user.address?.city}, {user.address?.street}, {user.address?.streetNumber}</strong>
         </p>
 
-        <p>Created on: <strong>14.10.1972</strong></p>
-        <p>Modified on: <strong>22.12.2002</strong></p>
+        <p>Created on: <strong>{fromIsoDate(user.createdAt)}</strong></p>
+        <p>Modified on: <strong>{fromIsoDate(user.updatedAt)}</strong></p>
       </div>
     </div>
   </div>

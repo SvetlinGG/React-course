@@ -2,10 +2,22 @@ import UserDeleteModal from "./UserDeleteModal";
 import UserDetails from "./UserDetails";
 import UserListItem from "./UserListItem";
 import Spinner from "./Spinner"
+import { useState } from "react";
+
+const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
 export default function UserList({
   users
 }) {
+
+  const [showUserDetails, setShowUserDetails] = useState(false);
+  const [selectedUserId, setSelectedUserId] = useState(null)
+
+  const userDetailsHandler = (userId) => {
+    setShowUserDetails(true);
+    setSelectedUserId(userId)
+  }
 
 
     return (
@@ -111,13 +123,13 @@ export default function UserList({
           <tbody>
             {/* Table row component */}
             
-              {users.map(user => <UserListItem key={user.id} {...user} />)}
+              {users.map(user => <UserListItem key={user.id} {...user} onInfo={userDetailsHandler} />)}
             
           </tbody>
         </table>
 
-        {/* <UserDetails />
-        <UserDeleteModal /> */}
+        { showUserDetails && <UserDetails userId={selectedUserId} />}
+        {/* <UserDeleteModal /> */}
       </div>
     );
 }
