@@ -12,16 +12,23 @@ export default function UserList({
 }) {
 
   const [showUserDetails, setShowUserDetails] = useState(false);
-  const [selectedUserId, setSelectedUserId] = useState(null)
+  const [selectedUserId, setSelectedUserId] = useState(null);
+  const [showUserDelete, setShowUserDelete] = useState(true);
 
   const userDetailsHandler = (userId) => {
     setShowUserDetails(true);
     setSelectedUserId(userId);
   }
 
-  const closeDetailsHandler = () => {
+  // const closeDetailsHandler = () => {
+  //   setShowUserDetails(false);
+  //   setSelectedUserId(null);
+  // }
+
+  const hideModalHandler = (userId) => {
     setShowUserDetails(false);
-    setSelectedUserId(null);
+    setSelectedUserId(null)
+    setShowUserDelete(false)
   }
 
 
@@ -133,7 +140,8 @@ export default function UserList({
           </tbody>
         </table>
 
-        { showUserDetails && <UserDetails userId={selectedUserId} onClose={closeDetailsHandler} />}
+        { showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
+        { showUserDelete && <UserDeleteModal  onClose={hideModalHandler} />}
         {/* <UserDeleteModal /> */}
       </div>
     );
