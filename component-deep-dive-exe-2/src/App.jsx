@@ -28,15 +28,32 @@ function App() {
   
 
   useEffect(() => {
-    fetch( baseURL, {
-      headers: {
-        'apiKey': apiKey
-      }
-    })
-    .then(res => res.json())
+    
+    //.then(res => res.json())
+    fetchUsers()
     .then(data => setUsers(data))
     .catch(err => console.error('Error fetching users: ', err))
   },[])
+
+  
+
+  const submitUserHandler = (user) => {
+    fetch(baseURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apiKey': apiKey,
+      },
+      body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data => {
+      setUsers([...users, data[0]])
+      closeModalHandler()
+    })
+    .catch(err => console.error('Error adding user: ', err))
+    .finally(() => setShowSaveUserModal(false))
+  }
  
 
   return (
@@ -49,7 +66,7 @@ function App() {
       <UserList users={users} />
       {/* New user button  */}
         <button className="btn-add btn" onClick={openModalHandler}>Add new user</button>
-      {showSaveUserModal && <SaveUserModal onClose={closeModalHandler} onSubmit={submitHandler} />}
+      {showSaveUserModal && <SaveUserModal onClose={closeModalHandler} onSubmit={submitUserHandler} />}
       
       {/* Pagination component  */}
       <Pagination />
@@ -65,5 +82,16 @@ function App() {
     </>
   )
 }
+
+async function fetchUsers(){
+    const response = await fetch( baseURL, {
+      headers: {
+        'apiKey': apiKey
+      }
+    });
+
+    const data = await response.json() ;
+    return data;
+  }
 
 export default App
