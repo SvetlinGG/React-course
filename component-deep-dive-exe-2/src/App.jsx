@@ -25,8 +25,6 @@ function App() {
     setShowSaveUserModal(false)
   }
   
-  
-
   useEffect(() => {
     
     //.then(res => res.json())
@@ -37,22 +35,22 @@ function App() {
 
   
 
-  const submitUserHandler = (user) => {
-    fetch(baseURL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apiKey': apiKey,
+  const submitUserHandler = async (user) => {
+
+    try {
+       await fetch(baseURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apiKey': apiKey,
       },
       body: JSON.stringify(user)
     })
-    .then(res => res.json())
-    .then(data => {
-      setUsers([...users, data[0]])
-      closeModalHandler()
-    })
-    .catch(err => console.error('Error adding user: ', err))
-    .finally(() => setShowSaveUserModal(false))
+    } catch (error) {
+      alert('Error adding user: ', error)
+    }finally{
+      setShowSaveUserModal(false)
+    }
   }
  
 
