@@ -3,7 +3,11 @@ import UserDetails from "./UserDetails";
 import UserListItem from "./UserListItem";
 import Spinner from "./Spinner"
 
-export default function UserList() {
+export default function UserList({
+  users
+}) {
+
+
     return (
           <div className="table-wrapper">
         {/* <Spinner />  */}
@@ -107,7 +111,7 @@ export default function UserList() {
           <tbody>
             {/* Table row component */}
             
-              <UserListItem />
+              {users.map(user => <UserListItem key={user.id} user={user} />)}
             
           </tbody>
         </table>
