@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 
 import Header from "./components/Header";
 import Footer from "./components/Footer"
@@ -9,6 +10,21 @@ import Pagination from "./components/Pagination";
 
 
 function App() {
+
+  const [users, setUsers] = useState([]);
+  console.log(users);
+  
+
+  useEffect(() => {
+    fetch('https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users', {
+      headers: {
+        'apiKey': 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT'
+      }
+    })
+    .then(res => res.json())
+    .then(data => setUsers(data))
+    .catch(err => console.error('Error fetching users: ', err))
+  },[])
  
 
   return (
@@ -18,7 +34,7 @@ function App() {
           <section className="card users-container">
       <UserSearch />
       {/* Table component */}
-      <UserList />
+      <UserList users={users} />
       {/* New user button  */}
         <button className="btn-add btn" >Add new user</button>
 
