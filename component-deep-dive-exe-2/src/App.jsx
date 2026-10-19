@@ -45,7 +45,10 @@ function App() {
           'apiKey': apiKey,
       },
       body: JSON.stringify(user)
-    })
+    });
+
+    const updateUsers = await fetchUsers();
+    setUsers(updateUsers);
     } catch (error) {
       alert('Error adding user: ', error)
     }finally{
