@@ -1,4 +1,4 @@
-import {Routes, Route } from 'react-router'
+import {Routes, Route, Link } from 'react-router'
 import About from './components/About'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
@@ -12,6 +12,13 @@ function App() {
   return (
     <>
     <h1>Hello Routing!!!</h1>
+
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/city">City</Link>
+    </nav>
+
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
