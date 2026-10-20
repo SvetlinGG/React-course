@@ -4,6 +4,10 @@ import Home from './components/Home'
 import NotFound from './components/NotFound'
 import City from './components/City'
 import Redirect from './components/Redirect'
+import AdminDashboard from './components/AdminDashboard'
+import Admin from './components/Admin'
+import AdminUsers from './components/AdminUsers'
+import AdminPosts from './components/AdminPosts'
 
 
 function App() {
@@ -24,6 +28,12 @@ function App() {
       <Route path='/about' element={<About />} />
       <Route path='/city/:city' element={<City />} />
       <Route path='/redirect' element={<Redirect />} />
+
+      <Route path='/admin/dashboard' element={<AdminDashboard />} />
+      <Route path='/admin' element={<Admin />} />
+      <Route path='/users' element={<AdminUsers />} />
+      <Route path='/posts' element={<AdminPosts />} />
+
 
       <Route path='*' element={<NotFound />} />
     </Routes>

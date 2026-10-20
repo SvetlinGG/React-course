@@ -1,5 +1,13 @@
+import { Outlet } from "react-router";
+
 export default function Admin() {
     return (
-        
+        <>
+        <h2>Admin</h2>
+
+        <Outlet />
+
+        <footer>End od Admin</footer>
+        </>
     );
 }
