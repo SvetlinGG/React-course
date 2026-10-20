@@ -152,7 +152,7 @@ export default function UserList({
           </thead>
           <tbody>
             {/* Table row component */}
-            
+              {users.length === 0 && <Spinner />}
               {users.map(user => <UserListItem key={user.id} {...user} onInfo={userDetailsHandler} onDelete={showUserDeleteHandler} />)}
             
           </tbody>
