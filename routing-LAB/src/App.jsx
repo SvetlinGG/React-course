@@ -1,4 +1,5 @@
-
+import {Routes, Route } from 'react-router'
+import About from './components/About'
 
 
 function App() {
@@ -6,7 +7,11 @@ function App() {
 
   return (
     <>
-      <h1>Hello Routing!!!</h1>
+    <h1>Hello Routing!!!</h1>
+    <Routes>
+      <Route path='/' element={<h1>Main Page</h1>} />
+      <Route path='/about' element={<About />} />
+    </Routes>
     </>
   )
 }
