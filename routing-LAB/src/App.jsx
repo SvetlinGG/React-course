@@ -9,6 +9,7 @@ import Admin from './components/Admin'
 import AdminUsers from './components/AdminUsers'
 import AdminPosts from './components/AdminPosts'
 import { useState } from 'react'
+import RouteGuard from './components/RouteGuard'
 
 
 function App() {
@@ -42,6 +43,10 @@ function App() {
         <Route index element={<AdminDashboard />} />
         <Route path='users' element={<AdminUsers />} />
         <Route path='posts' element={<AdminPosts />} />
+      </Route>
+
+      <Route element={<RouteGuard />}>
+        
       </Route>
 
 
