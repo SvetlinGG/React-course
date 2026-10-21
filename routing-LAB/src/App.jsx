@@ -10,14 +10,12 @@ import AdminUsers from './components/AdminUsers'
 import AdminPosts from './components/AdminPosts'
 import { useState } from 'react'
 import RouteGuard from './components/RouteGuard'
+import Profile from './components/Profile'
 
 
 function App() {
 
-  const [user, setUser] = useState({
-    username: 'Svetlin',
-    role: 'admin'
-})
+  const [user, setUser] = useState(null)
   
 
   return (
@@ -29,6 +27,8 @@ function App() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/city">City</NavLink>
+        <NavLink to="/admin">Admin</NavLink>
+        <NavLink to="/profile">Profile</NavLink>
       </nav>
     </header>
 
@@ -45,8 +45,8 @@ function App() {
         <Route path='posts' element={<AdminPosts />} />
       </Route>
 
-      <Route element={<RouteGuard />}>
-        
+      <Route element={<RouteGuard user={user} />}>
+        <Route path='/profile' element={<Profile />} />
       </Route>
 
 
