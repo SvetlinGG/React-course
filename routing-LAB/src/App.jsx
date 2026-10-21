@@ -1,4 +1,4 @@
-import {Routes, Route, Link } from 'react-router'
+import {Routes, Route, NavLink } from 'react-router'
 import About from './components/About'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
@@ -21,14 +21,17 @@ function App() {
 
   return (
     <>
-    <h1>Hello Routing!!!</h1>
+    <header className="header">
+      <h1>Hello Routing!!!</h1>
 
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/city">City</Link>
-    </nav>
+      <nav>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/city">City</NavLink>
+      </nav>
+    </header>
 
+    <main className="content">
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
@@ -44,6 +47,7 @@ function App() {
 
       <Route path='*' element={<NotFound />} />
     </Routes>
+    </main>
     </>
   )
 }
