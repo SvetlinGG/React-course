@@ -1,6 +1,6 @@
 import { Navigate } from "react-router";
 
-export default function Profile({user}) {
+export default function Profile({username}) {
 
     // if(!username) {
     //     return <Navigate to='/login' />
@@ -11,7 +11,7 @@ export default function Profile({user}) {
         <>
         <h2>Profile</h2>
 
-        <strong>{user.username}</strong>
+        <strong>{username}</strong>
         </>
     );
 }
