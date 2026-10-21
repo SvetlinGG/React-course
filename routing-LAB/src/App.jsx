@@ -8,9 +8,15 @@ import AdminDashboard from './components/AdminDashboard'
 import Admin from './components/Admin'
 import AdminUsers from './components/AdminUsers'
 import AdminPosts from './components/AdminPosts'
+import { useState } from 'react'
 
 
 function App() {
+
+  const [user, setUser] = useState({
+    username: 'Svetlin',
+    role: 'admin'
+})
   
 
   return (
