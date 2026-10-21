@@ -11,6 +11,7 @@ import AdminPosts from './components/AdminPosts'
 import { useState } from 'react'
 import RouteGuard from './components/RouteGuard'
 import Profile from './components/Profile'
+import Login from './components/Login'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <NavLink to="/city">City</NavLink>
         <NavLink to="/admin">Admin</NavLink>
         <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/login">Login</NavLink>
       </nav>
     </header>
 
@@ -38,6 +40,7 @@ function App() {
       <Route path='/about' element={<About />} />
       <Route path='/city/:city' element={<City />} />
       <Route path='/redirect' element={<Redirect />} />
+      <Route path='/login' element={<Login />} />
 
       <Route path='/admin' element={<Admin />}>
         <Route index element={<AdminDashboard />} />
