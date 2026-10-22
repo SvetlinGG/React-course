@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import Catalog from './components/Catalog'
 import AddGame from './components/AddGame'
+import Details from './components/Details'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/catalog' element={<Catalog />} />
         <Route path='/create' element={<AddGame />} />
+        <Route path='/games/:gameId' element={<Details />} />
       </Routes>
 
       <Footer />
