@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import Catalog from './components/Catalog'
+import AddGame from './components/AddGame'
 
 
 function App() {
@@ -12,10 +13,13 @@ function App() {
     <>
 
       <Header />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/catalog' element={<Catalog />} />
+        <Route path='/create' element={<AddGame />} />
       </Routes>
+
       <Footer />
     </>
   )
