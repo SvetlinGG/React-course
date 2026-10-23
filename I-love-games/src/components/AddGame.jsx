@@ -1,7 +1,44 @@
+import { useNavigate } from 'react-router';
+import { useState } from "react";
+import request from '../utils/response';
+
+const initialValues = {
+  title: '',
+  genre: '',
+  activePlayers: '',
+  releaseDate: '',
+  imageUrl: '',
+  summary: ''
+}
+
 export default function AddGame() {
+
+  const [values, setValues] = useState(initialValues);
+  const navigate = useNavigate();
+
+  const changeHandler = (e) => {
+    setValues(state => ({
+      ...state,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  const submitAction = async () => {
+    try {
+      await request('/games', 'POST', {
+        values,
+        activePlayers: Number(values.activePlayers)
+      })
+      navigate('/')
+    } catch (error) {
+      alert(error.message)
+    }
+  }
+
+
     return (
         <section id="add-page">
-  <form id="add-new-game">
+  <form id="add-new-game" action={submitAction}>
     <div className="container">
       <h1>Add New Game</h1>
       <div className="form-group-half">
@@ -10,6 +47,8 @@ export default function AddGame() {
           type="text"
           id="gameName"
           name="gameName"
+          value={values.title}
+          onChange={changeHandler}
           placeholder="Enter game title..."
         />
       </div>
@@ -19,6 +58,8 @@ export default function AddGame() {
           type="text"
           id="genre"
           name="genre"
+          value={values.genre}
+          onChange={changeHandler}
           placeholder="Enter game genre..."
         />
       </div>
@@ -28,13 +69,15 @@ export default function AddGame() {
           type="number"
           id="activePlayers"
           name="activePlayers"
+          value={values.activePlayers}
+          onChange={changeHandler}
           min={0}
           placeholder={0}
         />
       </div>
       <div className="form-group-half">
         <label htmlFor="releaseDate">Release Date:</label>
-        <input type="date" id="releaseDate" name="releaseDate" />
+        <input type="date" id="releaseDate" name="releaseDate" value={values.releaseDate} onChange={changeHandler} />
       </div>
       <div className="form-group-full">
         <label htmlFor="imageUrl">Image URL:</label>
@@ -42,6 +85,8 @@ export default function AddGame() {
           type="text"
           id="imageUrl"
           name="imageUrl"
+          value={values.imageUrl}
+          onChange={changeHandler}
           placeholder="Enter image URL..."
         />
       </div>
@@ -50,6 +95,8 @@ export default function AddGame() {
         <textarea
           name="summary"
           id="summary"
+          value={values.summary}
+          onChange={changeHandler}
           rows={5}
           placeholder="Write a brief summary..."
           defaultValue={""}
