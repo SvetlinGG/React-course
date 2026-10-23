@@ -46,7 +46,7 @@ export default function AddGame() {
         <input
           type="text"
           id="gameName"
-          name="gameName"
+          name="title"
           value={values.title}
           onChange={changeHandler}
           placeholder="Enter game title..."
@@ -99,7 +99,6 @@ export default function AddGame() {
           onChange={changeHandler}
           rows={5}
           placeholder="Write a brief summary..."
-          defaultValue={""}
         />
       </div>
       <input className="btn submit" type="submit" defaultValue="ADD GAME" />

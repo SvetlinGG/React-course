@@ -28,7 +28,7 @@ export default function Catalog() {
   <div className="catalog-container">
     {games.length > 0
     ? games.map(game => <GameCard key={game.id} {...game} />)
-    : <h3 class="no-articles">No Added Games Yet</h3>
+    : <h3 className="no-articles">No Added Games Yet</h3>
     }
   </div>
   {/* Display paragraph: If there is no games  */}
