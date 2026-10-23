@@ -6,6 +6,7 @@ import Catalog from './components/Catalog'
 import AddGame from './components/AddGame'
 import Details from './components/Details'
 import Edit from './components/Edit'
+import Login from './components/Login'
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <Route path='/create' element={<AddGame />} />
         <Route path='/details' element={<Details />} />
         <Route path='/edit' element={<Edit />} />
+
+        <Route path='/login' element={<Login />} />
       </Routes>
 
       <Footer />
