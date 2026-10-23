@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 export default function GameCard() {
     return (
         <div className="game">
