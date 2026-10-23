@@ -1,7 +1,14 @@
 import { Link } from 'react-router'
 import GameCard from './GameCard';
+import { useState } from 'react';
 
 export default function Catalog() {
+
+  const [games, setGames] = useState([]);
+
+  
+
+
     return (
         <section id="catalog-page">
   <h1>Catalog</h1>

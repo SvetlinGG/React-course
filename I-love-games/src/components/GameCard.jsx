@@ -1,13 +1,19 @@
 import { Link } from 'react-router'
 
-export default function GameCard() {
+export default function GameCard({
+    id,
+    title,
+    genre,
+    imsgeUrl
+}) {
+
     return (
         <div className="game">
-            <img src="/images/witcher.png" alt="The Witcher 3" />
+            <img src={imsgeUrl} alt={title} />
             <div className="details-overlay">
-                <p className="name">The Witcher 3</p>
-                <p className="genre">Open World</p>
-            <Link to="/details" className="details-button">
+                <p className="name">{title}</p>
+                <p className="genre">{genre}</p>
+            <Link to={`/games/${id}`} className="details-button">
                 Details
             </Link>
       </div>
