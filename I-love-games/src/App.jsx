@@ -7,6 +7,7 @@ import AddGame from './components/AddGame'
 import Details from './components/Details'
 import Edit from './components/Edit'
 import Login from './components/Login'
+import Register from './components/Register'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/edit' element={<Edit />} />
 
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
 
       <Footer />
