@@ -27,6 +27,7 @@ export default function Edit() {
           type="text"
           id="gameName"
           name="gameName"
+          value={game.title}
           placeholder="Enter game title..."
         />
       </div>
@@ -36,6 +37,7 @@ export default function Edit() {
           type="text"
           id="genre"
           name="genre"
+          value={game.genre}
           placeholder="Enter game genre..."
         />
       </div>
@@ -45,6 +47,7 @@ export default function Edit() {
           type="number"
           id="activePlayers"
           name="activePlayers"
+          value={game.activePlayers}
           min={0}
           placeholder={0}
         />
