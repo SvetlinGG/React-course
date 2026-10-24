@@ -4,12 +4,12 @@ export default function GameCard({
     id,
     title,
     genre,
-    imsgeUrl
+    imageUrl
 }) {
 
     return (
         <div className="game">
-            <img src={imsgeUrl} alt={title} />
+            <img src={imageUrl} alt={title} />
             <div className="details-overlay">
                 <p className="name">{title}</p>
                 <p className="genre">{genre}</p>
