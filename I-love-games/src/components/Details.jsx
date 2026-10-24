@@ -20,10 +20,10 @@ export default function Details() {
 
     if(window.confirm(`Are you sure you want to delete ${game.title}?`)){
       try {
-        await request(`'/game?id=eq.${gameId}`, "DELETE")
+        await request(`'/games?id=eq.${gameId}`, "DELETE")
         navigate('/catalog')
       } catch (error) {
-        
+        alert(error)
       }
     }
   }
