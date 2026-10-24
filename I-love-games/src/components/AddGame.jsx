@@ -26,7 +26,7 @@ export default function AddGame() {
   const submitAction = async () => {
     try {
       await request('/games', 'POST', {
-        values,
+        ...values,
         activePlayers: Number(values.activePlayers)
       })
       navigate('/')
