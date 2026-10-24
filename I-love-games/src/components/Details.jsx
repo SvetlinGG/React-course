@@ -1,6 +1,25 @@
-import { Link } from 'react-router';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router';
+import request from '../utils/response';
 
 export default function Details() {
+
+  const {gameId} = useParams();
+  const navigate = useNavigate();
+  const [game, setGame] = useState({});
+
+  useEffect(() => {
+    request(`/games?id=eq.${gameId}`)
+      .then(data => setGame(data[0]))
+      .catch(err => console.log(err))
+
+  },[gameId])
+
+  const deleteGameHandler = async (e) => {
+    e.preventDefault()
+  }
+
+
     return (
         <section id="game-details">
   <h1>Game Details</h1>
