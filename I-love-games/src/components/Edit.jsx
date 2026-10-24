@@ -62,6 +62,7 @@ export default function Edit() {
           type="text"
           id="imageUrl"
           name="imageUrl"
+          value={game.imageUrl}
           placeholder="Enter image URL..."
         />
       </div>
@@ -70,6 +71,7 @@ export default function Edit() {
         <textarea
           name="summary"
           id="summary"
+          value={game.summary}
           rows={5}
           placeholder="Write a brief summary..."
           defaultValue={""}
