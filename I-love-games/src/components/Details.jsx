@@ -17,6 +17,15 @@ export default function Details() {
 
   const deleteGameHandler = async (e) => {
     e.preventDefault()
+
+    if(window.confirm(`Are you sure you want to delete ${game.title}?`)){
+      try {
+        await request(`'/game?id=eq.${gameId}`, "DELETE")
+        navigate('/catalog')
+      } catch (error) {
+        
+      }
+    }
   }
 
 
