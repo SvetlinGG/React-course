@@ -1,4 +1,21 @@
+import { useState } from "react";
+import { useParams } from "react-router";
+
+const initialValues = {
+  title: '',
+  genre: '',
+  activePlayers: '',
+  releaseDate: '',
+  imageUrl: '',
+  summary: ''
+}
+
 export default function Edit() {
+
+  const {gameId}  = useParams
+  const [game, setGame] = useState(initialValues)
+
+
     return (
         <section id="edit-page">
   <form id="add-new-game">
