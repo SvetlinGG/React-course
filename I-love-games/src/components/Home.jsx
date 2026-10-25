@@ -19,24 +19,6 @@ export default function Home() {
             <button className="details-button">Details</button>
           </div>
         </div>
-        <div className="game">
-          <img src="/images/elden ring.png" alt="Elden Ring" />
-          <div className="details-overlay">
-            <p className="name">Elden Ring</p>
-            <p className="genre">Action RPG</p>
-            <button className="details-button">Details</button>
-          </div>
-        </div>
-        <div className="game">
-          <img src="/images/minecraft.png" alt="Minecraft" />
-          <div className="details-overlay">
-            <p className="name">Minecraft</p>
-            <p className="genre">Sandbox</p>
-            <button className="details-button">Details</button>
-          </div>
-          {/* Display paragraph: If there is no games  */}
-          {/* <p class="no-articles">No games yet</p> */}
-        </div>
       </div>
     </div>
   </div>
