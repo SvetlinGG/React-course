@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-//import { useParams } from "react-router";
 import request from "../utils/response";
-import Details from "./Details";
+import GameCard from "./GameCard";
 
 export default function Home() {
 
@@ -9,7 +8,7 @@ export default function Home() {
   const [gameRender, setGameRender] = useState([]);
 
   useEffect(() => {
-    request('/games?order=createdAt.desc&limit=3')
+    request('/games?order=createdAd.desc&limit=3')
       .then(data => setGameRender(data))
       .catch(err => console.log(err))
   },[])
@@ -28,7 +27,7 @@ export default function Home() {
       {/* Display div: with information about every game (if any) */}
       <div className="home-container">
         {gameRender.length > 0
-        ? gameRender.map(game => <Details key={game.id} {...game} />)
+        ? gameRender.map(game => <GameCard key={game.id} {...game} />)
         : <p className="no-articles">No Games Yet</p> 
         }
       </div>
