@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react";
+//import { useParams } from "react-router";
+import request from "../utils/response";
+import Details from "./Details";
+
 export default function Home() {
+
+  //const {gameId} = useParams();
+  const [gameRender, setGameRender] = useState([]);
+
+  useEffect(() => {
+    request('/games?order=createdAt.desc&limit=3')
+      .then(data => setGameRender(data))
+      .catch(err => console.log(err))
+  },[])
+
+
     return (
         <section id="welcome-world">
   <div className="welcome-message">
@@ -11,14 +27,10 @@ export default function Home() {
     <div id="latest-wrap">
       {/* Display div: with information about every game (if any) */}
       <div className="home-container">
-        <div className="game">
-          <img src="/images/witcher.png" alt="Elden Ring" />
-          <div className="details-overlay">
-            <p className="name">The Witcher 3</p>
-            <p className="genre">Open World</p>
-            <button className="details-button">Details</button>
-          </div>
-        </div>
+        {gameRender.length > 0
+        ? gameRender.map(game => <Details key={game.id} {...game} />)
+        : <p className="no-articles">No Games Yet</p> 
+        }
       </div>
     </div>
   </div>
