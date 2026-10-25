@@ -25,10 +25,10 @@ export default function Edit() {
 
 
   const changeHandler = (e) => {
-    setGame({
+    setGame(game => ({
         ...game,
         [e.target.name]: e.target.value
-    })
+    }))
   }
 
   const editAction = async () => {
@@ -110,7 +110,7 @@ export default function Edit() {
           defaultValue={""}
         />
       </div>
-      <input className="btn submit" type="submit" defaultValue="EDIT GAME" onClick={changeHandler} />
+      <input className="btn submit" type="submit" defaultValue="EDIT GAME" />
     </div>
   </form>
 </section>
