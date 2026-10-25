@@ -13,14 +13,21 @@ const initialValues = {
 
 export default function Edit() {
 
-  const {gameId}  = useParams
+  const {gameId}  = useParams()
   const [game, setGame] = useState(initialValues);
 
   useEffect(() => {
     request(`/games?id=eq.${gameId}`, 'EDIT')
     .then(data => setGame(data[0]))
     .catch(err => console.log(err))
-  })
+  }, [gameId]);
+
+  const changeHandler = (e) => {
+    setGame({
+        ...game,
+        [e.target.name]: e.target.value
+    })
+  }
 
 
     return (
@@ -84,7 +91,7 @@ export default function Edit() {
           defaultValue={""}
         />
       </div>
-      <input className="btn submit" type="submit" defaultValue="EDIT GAME" />
+      <input className="btn submit" type="submit" defaultValue="EDIT GAME" onClick={changeHandler} />
     </div>
   </form>
 </section>
