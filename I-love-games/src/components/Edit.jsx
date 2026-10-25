@@ -33,12 +33,12 @@ export default function Edit() {
 
   const editAction = async () => {
 
-    const result = await request(`/games?id=eq.${gameId}`, 'PUT', game)
+    await request(`/games?id=eq.${gameId}`, 'PUT', game)
       .then(() => {
         alert('Edited!')
       })
 
-      console.log(result);
+     
       
 
   }
@@ -54,7 +54,7 @@ export default function Edit() {
         <input
           type="text"
           id="gameName"
-          name="gameName"
+          name="title"
           value={game.title}
           onChange={changeHandler}
           placeholder="Enter game title..."
@@ -107,7 +107,7 @@ export default function Edit() {
           onChange={changeHandler}
           rows={5}
           placeholder="Write a brief summary..."
-          defaultValue={""}
+          //defaultValue={""}
         />
       </div>
       <input className="btn submit" type="submit" defaultValue="EDIT GAME" />
