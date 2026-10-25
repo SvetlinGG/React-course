@@ -68,7 +68,7 @@ export default function Edit() {
       </div>
       <div className="form-group-half">
         <label htmlFor="releaseDate">Release Date:</label>
-        <input type="date" id="releaseDate" name="releaseDate" />
+        <input type="date" id="releaseDate" name="releaseDate" value={game.releaseDate} />
       </div>
       <div className="form-group-full">
         <label htmlFor="imageUrl">Image URL:</label>
