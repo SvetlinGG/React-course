@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import request from "../utils/response";
 
 const initialValues = {
   title: '',
@@ -13,7 +14,13 @@ const initialValues = {
 export default function Edit() {
 
   const {gameId}  = useParams
-  const [game, setGame] = useState(initialValues)
+  const [game, setGame] = useState(initialValues);
+
+  useEffect(() => {
+    request(`/games?id=eq.${gameId}`, 'EDIT')
+    .then(data => setGame(data[0]))
+    .catch(err => console.log(err))
+  })
 
 
     return (
