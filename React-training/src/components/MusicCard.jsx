@@ -1,4 +1,4 @@
-import './MusicCard.css';
+import './music-card.css';
 
 export default function MusicCard({ artist, album, genre, year }) {
   return (
