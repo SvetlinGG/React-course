@@ -3,7 +3,7 @@ export default function Header() {
         <header className="header">
       <div className="header__inner">
         <a href="/" className="header__logo">
-          Country Explorer
+          Music Explorer
         </a>
 
         <nav className="header__nav">
