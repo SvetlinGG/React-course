@@ -72,3 +72,33 @@
   font-size: 0.8rem;
   color: #94a3b8;
 }
+
+.music-card__like {
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f8fafc;
+  background: transparent;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.music-card__like:hover {
+  border-color: #ec4899;
+  color: #ec4899;
+}
+
+.music-card__like--active {
+  color: #fff;
+  background: #ec4899;
+  border-color: #ec4899;
+}
+
+.music-card__like--active:hover {
+  color: #fff;
+  background: #db2777;
+}

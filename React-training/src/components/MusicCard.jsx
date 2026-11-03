@@ -1,6 +1,8 @@
-import './music-card.css';
+
 
 export default function MusicCard() {
+  
+
   return (
     <article className="music-card">
       <div className="music-card__cover">
@@ -15,6 +17,15 @@ export default function MusicCard() {
           <span className="music-card__genre">Genre</span>
           <span className="music-card__year">Year</span>
         </div>
+
+        <button
+          type="button"
+          className={`music-card__like${liked ? ' music-card__like--active' : ''}`}
+          aria-pressed={liked}
+          aria-label={liked ? 'Unlike' : 'Like'}
+        >
+          {liked ? '♥' : '♡'} {liked ? 'Liked' : 'Like'}
+        </button>
       </div>
     </article>
   );
