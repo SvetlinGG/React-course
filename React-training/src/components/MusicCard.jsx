@@ -8,7 +8,7 @@ export default function MusicCard({ artist, album, genre, year }) {
       </div>
 
       <div className="music-card__body">
-        <h3 className="music-card__album">{album}</h3>
+        <h3 className="music-card__album">Album</h3>
         <p className="music-card__artist">{artist}</p>
 
         <div className="music-card__meta">
