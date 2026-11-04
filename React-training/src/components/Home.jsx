@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <section className="music-list">
       
-        {music.map((item) => (<MusicCard key={music.id} {...item} />))}
+        {music.map((item) => (<MusicCard key={item.id} {...item} />))}
       
     </section>
   );
