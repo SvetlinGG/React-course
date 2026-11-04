@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { music } from '../data/music';
+//import { music } from '../data/music';
 
 
 export default function MusicCard({album, artist, genre, year}) {
