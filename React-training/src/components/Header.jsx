@@ -1,3 +1,4 @@
+import {Link } from "react-router";
 export default function Header() {
     return (
         <header className="header">
@@ -9,13 +10,13 @@ export default function Header() {
         <nav className="header__nav">
           <ul className="header__list">
             <li className="header__item">
-              <a href="/" className="header__link">Home</a>
+              <Link to="/" className="header__link">Home</Link>
             </li>
             <li className="header__item">
-              <a href="/my-collection" className="header__link">MyCollection</a>
+              <Link to="/my-collection" className="header__link">MyCollection</Link>
             </li>
             <li className="header__item">
-              <a href="/liked" className="header__link">Liked</a>
+              <Link to="/liked" className="header__link">Liked</Link>
             </li>
           </ul>
         </nav>
