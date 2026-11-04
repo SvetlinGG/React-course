@@ -24,7 +24,7 @@ export default function MusicCard() {
           aria-pressed={liked}
           aria-label={liked ? 'Unlike' : 'Like'}
         >
-          {liked ? '♥' : '♡'} {liked ? 'Liked' : 'Like'}
+          visibleMusic
         </button>
       </div>
     </article>

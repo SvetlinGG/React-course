@@ -1,11 +1,15 @@
-//import { music } from '../data/music';
+import { music } from '../data/music';
 import MusicCard from './MusicCard';
 
-export default function MusicList() {
+export default function Home() {
+
+    //const visibleMusic = music.slice(0, 10)
+
+
   return (
     <section className="music-list">
       
-        <MusicCard />
+        {music.map((item) => (<MusicCard key={music.id} {...item} />))}
       
     </section>
   );
