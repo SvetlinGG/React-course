@@ -1,14 +1,9 @@
-import { useState } from 'react';
+
 //import { music } from '../data/music';
 
 
-export default function MusicCard({album, artist, genre, year}) {
+export default function MusicCard({album, artist, genre, year, liked, onToggle}) {
 
-  const [liked, setLiked] = useState(false);
-
-  const handleLike = () => {
-    setLiked(!liked);
-  }
   
 
   return (
@@ -30,7 +25,7 @@ export default function MusicCard({album, artist, genre, year}) {
           type="button"
           className={`music-card__like${liked ? ' music-card__like--active' : ''}`}
           aria-pressed={liked}
-          onClick={handleLike}
+          onClick={onToggle}
           aria-label={liked ? 'Unlike' : 'Like'}
         >
           {liked ? '♥' : '♡'} {liked ? 'Liked' : 'Like'}

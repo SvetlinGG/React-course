@@ -13,6 +13,8 @@ export default function Home({collection, onToggle}) {
         {...item} 
         liked={collection.some(a => a.id === item.id)}
         onToggle={() => onToggle(item)}
+        key={item.id}
+        {...item}
         />
         ))}
     </section>

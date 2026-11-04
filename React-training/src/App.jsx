@@ -20,7 +20,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home collection={collection} onToggle={toggleAlbum} />} />
-        <Route patn='/my-collection' element={<MyCollection collection={collection} onToggle={toggleAlbum} />} />
+        <Route path='/my-collection' element={<MyCollection collection={collection} onToggle={toggleAlbum} />} />
         
       </Routes>
     </>
