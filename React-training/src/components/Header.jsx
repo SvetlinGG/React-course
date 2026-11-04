@@ -3,9 +3,9 @@ export default function Header() {
     return (
         <header className="header">
       <div className="header__inner">
-        <a href="/" className="header__logo">
+        <Link to="/" className="header__logo">
           Music Explorer
-        </a>
+        </Link>
 
         <nav className="header__nav">
           <ul className="header__list">
