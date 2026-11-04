@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MusicCard from "./MusicCard";
+
 const collectionAlbums = [];
 
 export default function MyCollection() {
