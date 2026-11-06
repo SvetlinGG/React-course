@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router'
 import './App.css'
 import Header from './components/Header'
 import MyCollection from './components/MyCollection'
-import { useState } from 'react'
+import { useState } from 'react';
+import Details from './components/Details';
 
 function App() {
   const [collection, setCollection] = useState([]);
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home collection={collection} onToggle={toggleAlbum} />} />
         <Route path='/my-collection' element={<MyCollection collection={collection} onToggle={toggleAlbum} />} />
+        <Route path='/details' element={<Details />} />
         
       </Routes>
     </>

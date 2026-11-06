@@ -1,5 +1,6 @@
 
 //import { music } from '../data/music';
+import { Link } from 'react-router';
 
 
 export default function MusicCard({album, artist, genre, year, liked, onToggle}) {
@@ -31,9 +32,9 @@ export default function MusicCard({album, artist, genre, year, liked, onToggle})
           {liked ? '♥' : '♡'} {liked ? 'Liked' : 'Like'}
         </button>
 
-        <button type="button" className="music-card__details">
+        <Link to="/details" className="music-card__details">
           Details
-        </button>
+        </Link>
       </div>
     </article>
   );
