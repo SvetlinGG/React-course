@@ -18,7 +18,7 @@ export default function MusicCard({id, album, artist, genre, year, liked, onTogg
         <p className="music-card__artist">{artist}</p>
 
         <div className="music-card__meta">
-          <span className="music-card__genre">{genre}</span>
+          {genre && <span className="music-card__genre">{genre}</span>}
           <span className="music-card__year">{year}</span>
         </div>
 

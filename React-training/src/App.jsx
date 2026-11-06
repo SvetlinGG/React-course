@@ -5,6 +5,7 @@ import Header from './components/Header'
 import MyCollection from './components/MyCollection'
 import { useState } from 'react';
 import Details from './components/Details';
+import Search from './components/Search';
 
 function App() {
   const [collection, setCollection] = useState([]);
@@ -23,6 +24,7 @@ function App() {
         <Route path='/' element={<Home collection={collection} onToggle={toggleAlbum} />} />
         <Route path='/my-collection' element={<MyCollection collection={collection} onToggle={toggleAlbum} />} />
         <Route path='/details/:artistId' element={<Details />} />
+        <Route path='/search' element={<Search collection={collection} onToggle={toggleAlbum} />} />
         
       </Routes>
     </>
