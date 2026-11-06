@@ -102,3 +102,22 @@
   color: #fff;
   background: #db2777;
 }
+
+.music-card__details {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f8fafc;
+  background: transparent;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.music-card__details:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}

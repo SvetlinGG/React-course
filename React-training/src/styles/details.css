@@ -1,0 +1,109 @@
+.details {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.details__card {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.details__cover {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+}
+
+.details__initial {
+  font-size: 6rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.details__body {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.details__album {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  color: #f8fafc;
+}
+
+.details__artist {
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.details__info {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.details__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #334155;
+}
+
+.details__label {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.details__value {
+  color: #e2e8f0;
+}
+
+.details__genre {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  color: #c7d2fe;
+  background: #312e81;
+  border-radius: 999px;
+}
+
+.details__actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.details__btn {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f8fafc;
+  background: transparent;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.details__btn:hover {
+  border-color: #ec4899;
+  color: #ec4899;
+}
+
+@media (max-width: 640px) {
+  .details__card {
+    grid-template-columns: 1fr;
+  }
+}

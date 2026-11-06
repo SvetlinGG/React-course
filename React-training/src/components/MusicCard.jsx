@@ -30,6 +30,10 @@ export default function MusicCard({album, artist, genre, year, liked, onToggle})
         >
           {liked ? '♥' : '♡'} {liked ? 'Liked' : 'Like'}
         </button>
+
+        <button type="button" className="music-card__details">
+          Details
+        </button>
       </div>
     </article>
   );
