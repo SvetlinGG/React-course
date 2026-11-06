@@ -3,14 +3,26 @@
 import { Link } from 'react-router';
 
 
-export default function MusicCard({id, album, artist, genre, year, liked, onToggle}) {
+export default function MusicCard({id, album, artist, genre, year, cover, liked, onToggle}) {
 
-  
+
 
   return (
     <article className="music-card">
       <div className="music-card__cover">
         <span className="music-card__initial">{album.charAt(0)}</span>
+
+        {/* album picture from Cover Art Archive; if it doesn't exist (404) we hide it and the letter stays */}
+        {cover && (
+          <img
+            className="music-card__image"
+            src={cover}
+            srcSet={`${cover.replace('front-250', 'front-500')} 2x`}
+            alt={`${album} cover`}
+            loading="lazy"
+            onError={(e) => (e.currentTarget.style.display = 'none')}
+          />
+        )}
       </div>
 
       <div className="music-card__body">
