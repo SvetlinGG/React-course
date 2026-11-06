@@ -1,6 +1,9 @@
+import { Link } from "react-router";
 import { music } from "../data/music";
 
 export default function Details() {
+
+  
   return (
     <section className="details">
       <article className="details__card">
@@ -31,9 +34,9 @@ export default function Details() {
             <button type="button" className="details__btn details__btn--like">
               ♡ Like
             </button>
-            <button type="button" className="details__btn">
+            <Link to="/" className="details__btn">
               ← Back
-            </button>
+            </Link>
           </div>
         </div>
       </article>
