@@ -3,7 +3,7 @@
 import { Link } from 'react-router';
 
 
-export default function MusicCard({album, artist, genre, year, liked, onToggle}) {
+export default function MusicCard({id, album, artist, genre, year, liked, onToggle}) {
 
   
 
@@ -32,7 +32,7 @@ export default function MusicCard({album, artist, genre, year, liked, onToggle})
           {liked ? '♥' : '♡'} {liked ? 'Liked' : 'Like'}
         </button>
 
-        <Link to="/details" className="music-card__details">
+        <Link to={`/details/${id}`} className="music-card__details">
           Details
         </Link>
       </div>

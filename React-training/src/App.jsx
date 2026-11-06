@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home collection={collection} onToggle={toggleAlbum} />} />
         <Route path='/my-collection' element={<MyCollection collection={collection} onToggle={toggleAlbum} />} />
-        <Route path='/details/:artistId' element={<Details collection={collection} onToggle={toggleAlbum}  />} />
+        <Route path='/details/:artistId' element={<Details />} />
         
       </Routes>
     </>

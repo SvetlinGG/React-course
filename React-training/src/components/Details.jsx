@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { Link, useParams } from "react-router";
 import { music } from "../data/music";
 
 export default function Details() {
 
-  const {artistId} = useParams(
-    music.find(album => album.id === parseInt(artistId)))
+    const {artistId} = useParams();
+
+    const [artist, setArtist] = useState({})
 
   
   return (
