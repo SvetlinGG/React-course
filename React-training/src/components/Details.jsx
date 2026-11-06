@@ -1,23 +1,23 @@
-export default function Details() {
+export default function Details({album, artist, genre, year}) {
   return (
     <section className="details">
       <article className="details__card">
         <div className="details__cover">
-          <span className="details__initial">T</span>
+          <span className="details__initial">{album.charAt(0)}</span>
         </div>
 
         <div className="details__body">
-          <h2 className="details__album">The Dark Side of the Moon</h2>
-          <p className="details__artist">Pink Floyd</p>
+          <h2 className="details__album">{album}</h2>
+          <p className="details__artist">{artist}</p>
 
           <ul className="details__info">
             <li className="details__row">
               <span className="details__label">Genre</span>
-              <span className="details__genre">Progressive Rock</span>
+              <span className="details__genre">{genre}</span>
             </li>
             <li className="details__row">
               <span className="details__label">Year</span>
-              <span className="details__value">1973</span>
+              <span className="details__value">{year}</span>
             </li>
             <li className="details__row">
               <span className="details__label">ID</span>
