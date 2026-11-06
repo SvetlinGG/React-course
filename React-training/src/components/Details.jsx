@@ -1,7 +1,10 @@
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 import { music } from "../data/music";
 
 export default function Details() {
+
+  const {artistId} = useParams(
+    music.find(album => album.id === parseInt(artistId)))
 
   
   return (
