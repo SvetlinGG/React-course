@@ -3,7 +3,7 @@
 import { Link } from 'react-router';
 
 
-export default function MusicCard({id, album, artist, genre, year, cover, liked, onToggle}) {
+export default function MusicCard({id, album, artist, genre, year, cover, liked, onToggle, imageUrl}) {
 
 
 
@@ -27,7 +27,18 @@ export default function MusicCard({id, album, artist, genre, year, cover, liked,
 
       <div className="music-card__body">
         <h3 className="music-card__album">{album}</h3>
-        <p className="music-card__artist">{artist}</p>
+        <div className="music-card__artist-container">
+          {imageUrl && (
+            <img
+              className="music-card__artist-image"
+              src={imageUrl}
+              alt={`${artist} artist`}
+              loading="lazy"
+              onError={(e) => (e.currentTarget.style.display = 'none')}
+            />
+          )}
+          <p className="music-card__artist">{artist}</p>
+        </div>
 
         <div className="music-card__meta">
           {genre && <span className="music-card__genre">{genre}</span>}
