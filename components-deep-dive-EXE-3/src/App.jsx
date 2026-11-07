@@ -4,6 +4,7 @@ import Employees from "./components/Employees";
 import Table from "./components/Table";
 import UserDetails from "./components/UserDetails";
 import CreateEdit from "./components/Create-Edit";
+import Delete from "./components/Delete";
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       {/* <UserDetails /> */}
 
       {/* <CreateEdit /> */}
+
+      {/* <Delete /> */}
 
       <Footer />
     </>
