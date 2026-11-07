@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Employees from "./components/Employees";
 import Table from "./components/Table";
 import UserDetails from "./components/UserDetails";
+import CreateEdit from "./components/Create-Edit";
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
 
       <Table />
       {/* <UserDetails /> */}
+
+      {/* <CreateEdit /> */}
 
       <Footer />
     </>
