@@ -5,6 +5,9 @@ import Table from "./components/Table";
 import UserDetails from "./components/UserDetails";
 import CreateEdit from "./components/Create-Edit";
 import Delete from "./components/Delete";
+//import Main from "./components/Main";
+import UserSearch from "./components/UserSearch";
+import Pagination from "./components/Pagination";
 
 
 function App() {
@@ -14,12 +17,25 @@ function App() {
     <>
       <Header />
 
+      <main className="main">
+      <section className="card users-container">
+      <UserSearch />
+      {/* Table component */}
       <Table />
-      {/* <UserDetails /> */}
+      {/* New user button  */}
+      <button className="btn-add btn">Add new user</button>
 
       {/* <CreateEdit /> */}
+      {/* Pagination component  */}
+      <Pagination />
+    </section>
+      {/* <UserDetails /> */}
+
 
       {/* <Delete /> */}
+    
+  </main>
+      
 
       <Footer />
     </>
