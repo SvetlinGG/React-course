@@ -5,7 +5,6 @@ import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
 import CreateEdit from "./components/Create-Edit";
 import Delete from "./components/Delete";
-//import Main from "./components/Main";
 import UserSearch from "./components/UserSearch";
 import Pagination from "./components/Pagination";
 import { useEffect, useState } from "react";

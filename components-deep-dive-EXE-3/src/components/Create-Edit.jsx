@@ -33,7 +33,7 @@ export default function CreateEdit({onClose, onSubmit}) {
   <div className="modal">
     <div className="user-container">
       <header className="headers">
-        <h2>Edit User/Add User</h2>
+        <h2>Add User</h2>
         <button className="btn close" onClick={onClose}>
           <svg
             aria-hidden="true"
