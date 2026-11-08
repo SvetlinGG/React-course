@@ -8,7 +8,7 @@ export default function CreateEdit({onClose, onSubmit}) {
     const formData = new FormData(e.target);
 
     const client = {
-      firstname: formData.get('firstName'),
+      firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
       email: formData.get('email'),
       phoneNumber: formData.get('phoneNumber'),

@@ -34,24 +34,30 @@ function App() {
     .catch(error => console.error('Error fetching users:', error))
   },[])
 
+
+
   const saveClickHandler = async (user) => {
 
-    await fetchUsers(baseURL, {
+    // send users to database
+    try {
+      await fetch(baseURL, {
       method: "POST",
       headers: {
         'apiKey': apiKey,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(user),
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      setUsers(prevState => [...prevState, data])
-    })
-    .catch(err => console.error(err))
+    });
+    const updatedUsers = await fetchUsers();
+    setUsers(updatedUsers);
+    }catch (error) {
+      alert('Error adding user: ' + error)
+    }finally{
+      setSaveShowUserModal(false)
+    }
 
   }
+
   
 
   return (
