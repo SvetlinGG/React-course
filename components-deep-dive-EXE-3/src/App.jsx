@@ -34,16 +34,22 @@ function App() {
     .catch(error => console.error('Error fetching users:', error))
   },[])
 
-  const saveClickHandler = () => {
+  const saveClickHandler = (user) => {
 
     fetchUsers(baseURL, {
       mathod: 'POST',
-      body: JSON.stringify(),
       headers: {
         apiKey,
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify(user),
     })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      setUsers(prevState => [...prevState, data])
+    })
+    .catch(err => console.error(err))
 
   }
   
