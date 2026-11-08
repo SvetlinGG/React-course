@@ -18,6 +18,17 @@ const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 function App() {
 
   const [users, setUsers] = useState([]);
+  const [saveShowUserModal, setSaveShowUserModal] = useState(false);
+
+  const addUserCloseHandler = () => {
+    setSaveShowUserModal(false);
+  };
+
+  const addUserClickHandler = () => {
+    setSaveShowUserModal(true);
+  };
+
+
 
   useEffect(() => {
     fetchUsers()
@@ -38,7 +49,7 @@ function App() {
       {/* New user button  */}
       <button className="btn-add btn">Add new user</button>
 
-      <CreateEdit />
+      <CreateEdit onClose={addUserCloseHandler}  />
       {/* Pagination component  */}
       <Pagination />
     </section>
