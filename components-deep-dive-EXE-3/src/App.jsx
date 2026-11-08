@@ -47,7 +47,7 @@ function App() {
       {/* Table component */}
       <UserList users={users} onUserUpdate={() => fetchUsers().then(data => setUsers(data))} />
       {/* New user button  */}
-      <button className="btn-add btn">Add new user</button>
+      <button className="btn-add btn" onClick={addUserClickHandler}>Add new user</button>
 
       { saveShowUserModal && <CreateEdit onClose={addUserCloseHandler}  />}
       {/* Pagination component  */}
