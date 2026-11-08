@@ -34,12 +34,12 @@ function App() {
     .catch(error => console.error('Error fetching users:', error))
   },[])
 
-  const saveClickHandler = (user) => {
+  const saveClickHandler = async (user) => {
 
-    fetchUsers(baseURL, {
-      mathod: 'POST',
+    await fetchUsers(baseURL, {
+      method: "POST",
       headers: {
-        apiKey,
+        'apiKey': apiKey,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(user),
