@@ -1,7 +1,33 @@
-export default function UserDetails() {
+import { useEffect, useState } from "react";
+import {fromIsoDate} from "../utils/dateTimeUtils";
+
+const baseUrl = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
+
+export default function UserDetails({userId}) {
+
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    fetch(`${baseUrl}?id=eq.${userId}`, {
+      headers: {
+        apiKey: apiKey,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => { console.log(data);
+        setUser(data[0]);
+      });
+  }, [userId]);
+
+  const closeHandler = () => setUser(null);
+
+  if (!user) return null;
+
+
     return (
         <div className="overlay">
-  <div className="backdrop" />
+  <div className="backdrop" onClick={closeHandler} />
   <div className="modal">
     <div className="detail-container">
       <header className="headers">
@@ -27,8 +53,8 @@ export default function UserDetails() {
       <div className="content">
         <div className="image-container">
           <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-            alt=""
+            src={user.imageUrl}
+            alt={user.firstName}
             className="image"
           />
         </div>
@@ -38,23 +64,23 @@ export default function UserDetails() {
           </p>
           <p>
             Full Name:
-            <strong> Peter Johnson </strong>
+            <strong>{user.firstName} {user.lastName}</strong>
           </p>
           <p>
-            Email: <strong>peter@abv.bg</strong>
+            Email: <strong>{user.email}</strong>
           </p>
           <p>
-            Phone Number: <strong>0812345678</strong>
+            Phone Number: <strong>{user.phoneNumber}</strong>
           </p>
           <p>
             Address:
-            <strong> Bulgaria, Sofia, Aleksandar Malinov 78 </strong>
+            <strong>{user.address}</strong>
           </p>
           <p>
-            Created on: <strong>Wednesday, June 28, 2022</strong>
+            Created on: <strong>{fromIsoDate(user.createdAt)}</strong>
           </p>
           <p>
-            Modified on: <strong>Thursday, June 29, 2022</strong>
+            Modified on: <strong>{fromIsoDate(user.updatedAt)}</strong>
           </p>
         </div>
       </div>

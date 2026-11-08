@@ -8,9 +8,22 @@ import Delete from "./components/Delete";
 //import Main from "./components/Main";
 import UserSearch from "./components/UserSearch";
 import Pagination from "./components/Pagination";
+import { useEffect, useState } from "react";
+import { fetchUsers } from "./api/usersApi";
+
+const baseURL = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
 
 function App() {
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetchUsers()
+    .then(data => setUsers(data))
+    .catch(error => console.error('Error fetching users:', error))
+  },[])
   
 
   return (
@@ -21,11 +34,11 @@ function App() {
       <section className="card users-container">
       <UserSearch />
       {/* Table component */}
-      <UserList />
+      <UserList users={users} onUserUpdate={() => fetchUsers().then(data => setUsers(data))} />
       {/* New user button  */}
       <button className="btn-add btn">Add new user</button>
 
-      {/* <CreateEdit /> */}
+      <CreateEdit />
       {/* Pagination component  */}
       <Pagination />
     </section>

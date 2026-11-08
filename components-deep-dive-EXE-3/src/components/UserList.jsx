@@ -1,6 +1,14 @@
+import { useState } from "react";
 import UserListItem from "./UserListItem";
 
-export default function UserList() {
+const baseUrl = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
+const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
+
+export default function UserList({users}) {
+
+  const [showUserDetails, setShowUserDetails] = useState(false)
+
+
     return (
          <table className="table">
   <thead>
@@ -100,7 +108,7 @@ export default function UserList() {
     </tr>
   </thead>
   <tbody>
-    <UserListItem />
+    {users.map((user) => (<UserListItem key={user.id} {...user} />))}
     </tbody>
 </table>
     );
