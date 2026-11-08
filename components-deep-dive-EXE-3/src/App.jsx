@@ -28,13 +28,24 @@ function App() {
     setSaveShowUserModal(true);
   };
 
-
-
   useEffect(() => {
     fetchUsers()
     .then(data => setUsers(data))
     .catch(error => console.error('Error fetching users:', error))
   },[])
+
+  const saveClickHandler = () => {
+
+    fetchUsers(baseURL, {
+      mathod: 'POST',
+      body: JSON.stringify(),
+      headers: {
+        apiKey,
+        'Content-Type': 'application/json'
+      }
+    })
+
+  }
   
 
   return (
@@ -49,7 +60,7 @@ function App() {
       {/* New user button  */}
       <button className="btn-add btn" onClick={addUserClickHandler}>Add new user</button>
 
-      { saveShowUserModal && <CreateEdit onClose={addUserCloseHandler}  />}
+      { saveShowUserModal && <CreateEdit onClose={addUserCloseHandler} onSubmit={saveClickHandler} />}
       {/* Pagination component  */}
       <Pagination />
     </section>

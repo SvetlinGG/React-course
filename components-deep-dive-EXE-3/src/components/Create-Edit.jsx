@@ -1,9 +1,28 @@
 
 
-export default function CreateEdit({
-  onClose,
-  onSubmit
-}) {
+export default function CreateEdit({onClose, onSubmit}) {
+
+  const saveClickHandler = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const client = {
+      firstname: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phoneNumber: formData.get('phoneNumber'),
+      imageUrl: formData.get('imageUrl'),
+      address: {
+        country: formData.get('country'),
+        city: formData.get('city'),
+        street: formData.get('street'),
+        streetNumber: formData.get('streetNumber'),
+      },
+    }
+    onSubmit(client)
+
+  }
 
   
 
@@ -33,7 +52,7 @@ export default function CreateEdit({
           </svg>
         </button>
       </header>
-      <form>
+      <form onSubmit={saveClickHandler}>
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="firstName">First name</label>
