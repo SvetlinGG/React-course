@@ -49,7 +49,7 @@ function App() {
       {/* New user button  */}
       <button className="btn-add btn">Add new user</button>
 
-      <CreateEdit onClose={addUserCloseHandler}  />
+      { saveShowUserModal && <CreateEdit onClose={addUserCloseHandler}  />}
       {/* Pagination component  */}
       <Pagination />
     </section>
