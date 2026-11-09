@@ -74,7 +74,7 @@ export default function UserDetails({userId}) {
           </p>
           <p>
             Address:
-            <strong>{user.address}</strong>
+            <strong>{user.address?.country}, {user.address?.city}, {user.address?.street}, {user.address?.streetNumber}</strong>
           </p>
           <p>
             Created on: <strong>{fromIsoDate(user.createdAt)}</strong>

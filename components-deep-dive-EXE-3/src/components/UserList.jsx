@@ -5,16 +5,19 @@ import UserDetails from "./UserDetails";
 const baseUrl = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 
-export default function UserList({users}) {
+export default function UserList({users, onUserUpdate}) {
 
-  const [showUserDetails, setShowUserDetails] = useState(false)
+  const [showUserDetails, setShowUserDetails] = useState(false);
+  const [selectedUserId, setSelectedUserId] = useState(null)
 
   const showUserDetailsHandler = (userId) => {
     setShowUserDetails(true);
+    setSelectedUserId(userId)
   }
 
   const hideModalHandler = () => {
     setShowUserDetails(false);
+    setSelectedUserId(null)
 
   }
 
@@ -120,10 +123,10 @@ export default function UserList({users}) {
     </tr>
   </thead>
   <tbody>
-    {users.map((user) => (<UserListItem key={user.id} {...user} />))}
+    {users.map((user) => (<UserListItem key={user.id} {...user} onInfo={showUserDetailsHandler} />))}
     </tbody>
 </table>
-{showUserDetails && <UserDetails userId={showUserDetailsHandler} />}
+{showUserDetails && <UserDetails userId={setSelectedUserId} onClose={hideModalHandler} />}
 </div>
     );
 }
