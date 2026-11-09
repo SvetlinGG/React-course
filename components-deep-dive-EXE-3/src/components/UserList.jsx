@@ -126,7 +126,7 @@ export default function UserList({users, onUserUpdate}) {
     {users.map((user) => (<UserListItem key={user.id} {...user} onInfo={showUserDetailsHandler} />))}
     </tbody>
 </table>
-{showUserDetails && <UserDetails userId={setSelectedUserId} onClose={hideModalHandler} />}
+{showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
 </div>
     );
 }

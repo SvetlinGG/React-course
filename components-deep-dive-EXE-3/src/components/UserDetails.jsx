@@ -32,7 +32,7 @@ export default function UserDetails({userId}) {
     <div className="detail-container">
       <header className="headers">
         <h2>User Detail</h2>
-        <button className="btn close">
+        <button className="btn close" onClick={closeHandler}>
           <svg
             aria-hidden="true"
             focusable="false"
