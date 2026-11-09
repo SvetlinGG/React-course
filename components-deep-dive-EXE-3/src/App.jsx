@@ -73,7 +73,7 @@ function App() {
 
       { saveShowUserModal && <CreateEdit onClose={addUserCloseHandler} onSubmit={saveClickHandler} />}
       {/* Pagination component  */}
-      <Pagination />
+      {/* <Pagination /> */}
     </section>
       {/* <UserDetails /> */}
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UserListItem from "./UserListItem";
+import UserDetails from "./UserDetails";
 
 const baseUrl = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
@@ -8,8 +9,19 @@ export default function UserList({users}) {
 
   const [showUserDetails, setShowUserDetails] = useState(false)
 
+  const showUserDetailsHandler = (userId) => {
+    setShowUserDetails(true);
+  }
+
+  const hideModalHandler = () => {
+    setShowUserDetails(false);
+
+  }
+
 
     return (
+      <div className="table-wrapper">
+        {/* <Spinner /> */}
          <table className="table">
   <thead>
     <tr>
@@ -111,5 +123,7 @@ export default function UserList({users}) {
     {users.map((user) => (<UserListItem key={user.id} {...user} />))}
     </tbody>
 </table>
+{showUserDetails && <UserDetails userId={showUserDetailsHandler} />}
+</div>
     );
 }
