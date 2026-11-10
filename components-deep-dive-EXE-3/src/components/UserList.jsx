@@ -135,7 +135,7 @@ export default function UserList({users, onUserUpdate}) {
     </tbody>
 </table>
 {showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
-{showDeleteUser && <Delete userId={selectedUserId} onClose={hideModalHandler} />}
+{showDeleteUser && <Delete onClose={hideModalHandler} />}
 </div>
     );
 }
