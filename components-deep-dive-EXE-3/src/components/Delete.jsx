@@ -1,4 +1,4 @@
-export default function Delete({onClose}) {
+export default function Delete({onClose, onDelete}) {
     return (
         <div className="overlay">
   <div className="backdrop" onClick={onClose}></div>
@@ -26,7 +26,7 @@ export default function Delete({onClose}) {
       </header>
       <div className="actions">
         <div id="form-actions">
-          <button id="action-save" className="btn" type="submit">
+          <button id="action-save" className="btn" type="submit" onClick={onDelete} >
             Delete
           </button>
           <button id="action-cancel" className="btn" type="button" onClick={onClose}>

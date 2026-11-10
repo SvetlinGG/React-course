@@ -29,6 +29,23 @@ export default function UserList({users, onUserUpdate}) {
     setShowDeleteUser(true);
   }
 
+  const deleteUserHandler = async () => {
+    try {
+      await fetch(`${baseUrl}?id=eq.${selectedUserId}`, {
+        method: 'DELETE',
+        headers: {
+          'apiKey': apiKey,
+          'Content-Type': 'application/json'
+        }
+      });
+      onUserUpdate();
+    } catch (error) {
+      alert('Error deleting user: ' + error)
+    } finally {
+      hideModalHandler();
+    }
+  }
+
 
     return (
       <div className="table-wrapper">
@@ -135,7 +152,7 @@ export default function UserList({users, onUserUpdate}) {
     </tbody>
 </table>
 {showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
-{showDeleteUser && <Delete onClose={hideModalHandler} />}
+{showDeleteUser && <Delete onClose={hideModalHandler} onDelete={deleteUserHandler} />}
 </div>
     );
 }
