@@ -1,6 +1,7 @@
 import { useState } from "react";
 import UserListItem from "./UserListItem";
 import UserDetails from "./UserDetails";
+import Delete from "./Delete";
 
 const baseUrl = 'https://pntezrlzpnvbmxjltaqr.supabase.co/rest/v1/users';
 const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
@@ -8,7 +9,8 @@ const apiKey = 'sb_publishable_1YnOAlXkaINLpwxGrT8QNg_-ssIpzlT';
 export default function UserList({users, onUserUpdate}) {
 
   const [showUserDetails, setShowUserDetails] = useState(false);
-  const [selectedUserId, setSelectedUserId] = useState(null)
+  const [selectedUserId, setSelectedUserId] = useState(null);
+  const [showDeleteUser, setShowDeleteUser] = useState(false);
 
   const showUserDetailsHandler = (userId) => {
     setShowUserDetails(true);
@@ -17,8 +19,14 @@ export default function UserList({users, onUserUpdate}) {
 
   const hideModalHandler = () => {
     setShowUserDetails(false);
-    setSelectedUserId(null)
+    setSelectedUserId(null);
+    setShowDeleteUser(false);
 
+  }
+
+  const userDeleteHandler = (userId) => {
+    setSelectedUserId(userId);
+    setShowDeleteUser(true);
   }
 
 
@@ -127,6 +135,7 @@ export default function UserList({users, onUserUpdate}) {
     </tbody>
 </table>
 {showUserDetails && <UserDetails userId={selectedUserId} onClose={hideModalHandler} />}
+{showDeleteUser && <Delete userId={selectedUserId} onClose={hideModalHandler} />}
 </div>
     );
 }
