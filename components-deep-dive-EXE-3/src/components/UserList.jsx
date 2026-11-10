@@ -35,7 +35,6 @@ export default function UserList({users, onUserUpdate}) {
         method: 'DELETE',
         headers: {
           'apiKey': apiKey,
-          'Content-Type': 'application/json'
         }
       });
       onUserUpdate();
