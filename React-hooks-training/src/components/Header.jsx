@@ -10,7 +10,7 @@ export default function Header() {
             <Link to="/">Music Catalog</Link>
           </li>
           <li>
-            <Link to="/my-collection">My Collection</Link>
+            <Link to="/collection">My Collection</Link>
           </li>
         </ul>
       </nav>
