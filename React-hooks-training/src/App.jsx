@@ -1,12 +1,13 @@
-
+import {Routes, Route } from 'react-router'
+import Header from './components/Header'
 
 function App() {
   
 
   return (
-    <>
-     <h1>New React Day</h1>
-    </>
+    <Routes>
+      <Route path='/' element={<Header />} />
+    </Routes>
   )
 }
 
