@@ -1,24 +1,24 @@
 //import { useEffect, useState } from 'react';
 import { albums } from '../data/music';
+import './MusicCatalog.css';
 
 
 export default function MusicCatalog() {
 
-    
+
     return (
         <div className="container">
-            {
-                albums.map((album) => (
-                    <ul>
-                    <li key={album.id}>
+            <ul className="album-list">
+                {albums.map((album) => (
+                    <li key={album.id} className="album-card">
                         <h3>{album.album}</h3>
-                        <p>{album.artist}</p>
+                        <p className="artist">{album.artist}</p>
                         <p>{album.year}</p>
-                        <p>{album.genre}</p>
+                        <p className="genre">{album.genre}</p>
+                        <button className="add-btn">Add to Collection</button>
                     </li>
-                    </ul>
-                ))
-            }
+                ))}
+            </ul>
         </div>
     );
 }
