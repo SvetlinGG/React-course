@@ -1,9 +1,20 @@
 //import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { albums } from '../data/music';
 import './MusicCatalog.css';
 
 
 export default function MusicCatalog() {
+
+    const [collection, setCollection] = useState([]);
+
+    const toggleAlbum = (album) => {
+        setCollection(prev =>
+            prev.some(a => a.id === album.id)
+            ? prev.filter(a => a.id !== album.id)
+            : [...prev, album]
+        )
+    }
 
 
     return (
@@ -15,7 +26,7 @@ export default function MusicCatalog() {
                         <p className="artist">{album.artist}</p>
                         <p>{album.year}</p>
                         <p className="genre">{album.genre}</p>
-                        <button className="add-btn">Add to Collection</button>
+                        <button className="add-btn" onToggle={toggleAlbum}>Add to Collection</button>
                     </li>
                 ))}
             </ul>
